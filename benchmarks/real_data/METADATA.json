@@ -1,0 +1,33 @@
+{
+  "name": "AgentOS-Real-200",
+  "generated_at": "2026-10-31T15:37:51.810082+00:00",
+  "count": 200,
+  "splits": {
+    "dev": 150,
+    "test": 50
+  },
+  "sampling": "ascending SHA-256(source_id); first N; first 75% local dev",
+  "sources": {
+    "bfcl_v4_live_multiple": {
+      "count": 100,
+      "revision": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "prompts_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_live_multiple.json",
+      "answers_url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/data/possible_answer/BFCL_v4_live_multiple.json",
+      "prompts_sha256": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+      "answers_sha256": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+      "license": "Apache-2.0"
+    },
+    "hotpotqa_distractor": {
+      "count": 100,
+      "url": "https://datasets-server.huggingface.co/rows?dataset=hotpotqa%2Fhotpot_qa&config=distractor&split=validation&offset=0&length=100",
+      "canonical_url": "https://curtis.ml.cmu.edu/datasets/hotpot/hotpot_dev_distractor_v1.json",
+      "sha256": "d2d4806c1337dc8e60958ac06647c630716479695bac029336f0e8ae3ba2234b",
+      "license": "CC-BY-SA-4.0"
+    }
+  },
+  "limitations": [
+    "Local dev/test are deterministic subsets of public evaluation/development data.",
+    "Do not tune on test.jsonl.",
+    "BFCL functions are evaluated as schemas; external APIs are not executed."
+  ]
+}

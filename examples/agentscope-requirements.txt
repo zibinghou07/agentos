@@ -1,0 +1,4 @@
+agentscope==1.0.21
+mcp[cli]>=1.28,<2
+greenlet>=3,<4
+tqdm>=4,<5

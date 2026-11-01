@@ -1,0 +1,55 @@
+{
+  "methods": {
+    "agentos": {
+      "runs": 1,
+      "task_success_rate": 1.0,
+      "task_success_ci95": [
+        1.0,
+        1.0
+      ],
+      "avg_check_score": 1.0,
+      "avg_llm_calls": 5,
+      "avg_input_tokens": 6202,
+      "avg_output_tokens": 888,
+      "avg_total_tokens": 7090,
+      "avg_reasoning_tokens": 0,
+      "avg_tool_calls": 3,
+      "avg_tool_errors": 0,
+      "p50_latency_ms": 28681.808417022694,
+      "p95_latency_ms": 28681.808417022694,
+      "crashed_or_timed_out": 0,
+      "usage_estimated_runs": 0,
+      "side_effect_violations": 0,
+      "avg_plan_nodes": 3,
+      "avg_plan_parallelism": 1.5,
+      "avg_replans": 0,
+      "avg_node_reexecutions": 0
+    }
+  },
+  "by_family": {
+    "agentos": {
+      "policy_action": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7090
+      }
+    }
+  },
+  "paired_tests": {},
+  "config": {
+    "split": "dev",
+    "tasks": 1,
+    "methods": [
+      "agentos"
+    ],
+    "repeats": 1,
+    "provider": "bailian",
+    "model": "qwen3.8-max-0902",
+    "enable_thinking": false,
+    "families": {
+      "policy_action": 1
+    },
+    "token_budget": 30000,
+    "complete_tasks": 1
+  }
+}

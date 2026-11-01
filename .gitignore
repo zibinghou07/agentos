@@ -1,0 +1,35 @@
+# Secrets: only .env.example is tracked
+.env
+.env.*
+!.env.example
+
+# Environments and caches
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+.vscode/
+.idea/
+
+# Generated databases (rebuilt on demand)
+*.db
+*.db-shm
+*.db-wal
+data/*
+!data/.gitkeep
+experiments/results/**/stores/
+
+# Model weights and checkpoints
+*.npz
+*.pt
+*.safetensors
+experiments/results/embedding/model_checkpoint/
+
+# Logs
+logs/
+*.log

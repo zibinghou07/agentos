@@ -1,0 +1,11 @@
+{
+  "name": "AgentOS-Bench Synthetic v1",
+  "source": "generated locally by agentos.benchmarks.generator",
+  "license": "same as this repository",
+  "synthetic": true,
+  "counts": {
+    "dev": 120,
+    "test": 50,
+    "total": 170
+  }
+}

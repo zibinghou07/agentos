@@ -1,0 +1,275 @@
+{
+  "methods": {
+    "agentos": {
+      "runs": 18,
+      "task_success_rate": 0.9444444444444444,
+      "task_success_ci95": [
+        0.8333333333333334,
+        1.0
+      ],
+      "avg_check_score": 0.9444444444444444,
+      "avg_llm_calls": 5.444444444444445,
+      "avg_input_tokens": 6174.388888888889,
+      "avg_output_tokens": 679.0555555555555,
+      "avg_total_tokens": 6853.444444444444,
+      "avg_reasoning_tokens": 0,
+      "avg_tool_calls": 3.7222222222222223,
+      "avg_tool_errors": 0.4444444444444444,
+      "p50_latency_ms": 30425.56593750487,
+      "p95_latency_ms": 53932.871583083754,
+      "crashed_or_timed_out": 0,
+      "usage_estimated_runs": 0,
+      "hotpot_answer_f1": 0.11548913043478261,
+      "side_effect_violations": 1,
+      "avg_plan_nodes": 3.2777777777777777,
+      "avg_plan_parallelism": 1.4907222222222223,
+      "avg_replans": 0.05555555555555555,
+      "avg_node_reexecutions": 0
+    },
+    "fixed_roles": {
+      "runs": 18,
+      "task_success_rate": 0.6666666666666666,
+      "task_success_ci95": [
+        0.4444444444444444,
+        0.8888888888888888
+      ],
+      "avg_check_score": 0.7777777777777778,
+      "avg_llm_calls": 10.11111111111111,
+      "avg_input_tokens": 15729.277777777777,
+      "avg_output_tokens": 1192.4444444444443,
+      "avg_total_tokens": 16921.722222222223,
+      "avg_reasoning_tokens": 0,
+      "avg_tool_calls": 6.277777777777778,
+      "avg_tool_errors": 0.4444444444444444,
+      "p50_latency_ms": 67967.22775000671,
+      "p95_latency_ms": 95397.29822675143,
+      "crashed_or_timed_out": 0,
+      "usage_estimated_runs": 0,
+      "hotpot_answer_f1": 0.049405878674171365,
+      "side_effect_violations": 0
+    },
+    "react": {
+      "runs": 18,
+      "task_success_rate": 0.9444444444444444,
+      "task_success_ci95": [
+        0.8333333333333334,
+        1.0
+      ],
+      "avg_check_score": 0.9629629629629629,
+      "avg_llm_calls": 4.5,
+      "avg_input_tokens": 14432.166666666666,
+      "avg_output_tokens": 516.0555555555555,
+      "avg_total_tokens": 14948.222222222223,
+      "avg_reasoning_tokens": 0,
+      "avg_tool_calls": 3.5,
+      "avg_tool_errors": 0.2777777777777778,
+      "p50_latency_ms": 29737.259228990297,
+      "p95_latency_ms": 46021.5138831001,
+      "crashed_or_timed_out": 0,
+      "usage_estimated_runs": 0,
+      "hotpot_answer_f1": 0.06335128286347799,
+      "side_effect_violations": 1
+    }
+  },
+  "by_family": {
+    "agentos": {
+      "analytics": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6391.5
+      },
+      "fault_outage": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 9410.5
+      },
+      "fault_transient": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6908.5
+      },
+      "hotpotqa_agentic": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6365
+      },
+      "logistics": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6216.5
+      },
+      "lookup": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 3656.5
+      },
+      "multi_hop": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7228.5
+      },
+      "parallel_cross_source": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7584
+      },
+      "policy_action": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 7920
+      }
+    },
+    "fixed_roles": {
+      "analytics": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 19209
+      },
+      "fault_outage": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 10597
+      },
+      "fault_transient": {
+        "runs": 2,
+        "task_success_rate": 0,
+        "avg_total_tokens": 25524.5
+      },
+      "hotpotqa_agentic": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6688.5
+      },
+      "logistics": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 19294
+      },
+      "lookup": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6547.5
+      },
+      "multi_hop": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 11187
+      },
+      "parallel_cross_source": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 29044
+      },
+      "policy_action": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 24204
+      }
+    },
+    "react": {
+      "analytics": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 20849
+      },
+      "fault_outage": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 12370
+      },
+      "fault_transient": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 20451.5
+      },
+      "hotpotqa_agentic": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 9536
+      },
+      "logistics": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 18547.5
+      },
+      "lookup": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 5519
+      },
+      "multi_hop": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 12309.5
+      },
+      "parallel_cross_source": {
+        "runs": 2,
+        "task_success_rate": 1,
+        "avg_total_tokens": 12973.5
+      },
+      "policy_action": {
+        "runs": 2,
+        "task_success_rate": 0.5,
+        "avg_total_tokens": 21978
+      }
+    }
+  },
+  "paired_tests": {
+    "agentos_vs_fixed_roles": {
+      "pairs": 18,
+      "success_diff": 0.2777777777777778,
+      "success_diff_ci95": [
+        0.05416666666666911,
+        0.5555555555555556
+      ],
+      "mcnemar": {
+        "discordant_a_only": 6,
+        "discordant_b_only": 1,
+        "chi_square": 2.2857142857142856,
+        "p_value": 0.13057001811573685
+      },
+      "token_ratio": 0.40500868377594873
+    },
+    "agentos_vs_react": {
+      "pairs": 18,
+      "success_diff": 0.0,
+      "success_diff_ci95": [
+        -0.16666666666666666,
+        0.16666666666666666
+      ],
+      "mcnemar": {
+        "discordant_a_only": 1,
+        "discordant_b_only": 1,
+        "chi_square": 0.5,
+        "p_value": 0.47950012218695337
+      },
+      "token_ratio": 0.4584788975277625
+    }
+  },
+  "config": {
+    "split": "test",
+    "tasks": 18,
+    "methods": [
+      "react",
+      "fixed_roles",
+      "agentos"
+    ],
+    "repeats": 1,
+    "provider": "bailian",
+    "model": "qwen3.8-max-0902",
+    "enable_thinking": false,
+    "families": {
+      "lookup": 2,
+      "parallel_cross_source": 2,
+      "multi_hop": 2,
+      "analytics": 2,
+      "policy_action": 2,
+      "logistics": 2,
+      "fault_transient": 2,
+      "fault_outage": 2,
+      "hotpotqa_agentic": 2
+    },
+    "token_budget": 420000,
+    "complete_tasks": 18
+  }
+}

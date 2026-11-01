@@ -1,0 +1,36 @@
+{
+  "task_id": "real-bfcl-live_multiple_801-175-7",
+  "source": "bfcl_v4_live_multiple",
+  "model": "qwen3.8-flash",
+  "prompt": "What is the the current weather conditions in New Delhi, India?",
+  "model_output": [
+    {
+      "function": {
+        "arguments": "{\"city\": \"New Delhi, IN\"}",
+        "name": "Weather_1_GetWeather"
+      },
+      "id": "call_201183ac4aae43869032fb2c",
+      "index": 0,
+      "type": "function"
+    }
+  ],
+  "prediction": [
+    "Weather_1_GetWeather"
+  ],
+  "expected": [
+    "Weather_1_GetWeather"
+  ],
+  "metric": "function_selection_exact_match",
+  "score": 1.0,
+  "usage": {
+    "request_id": "chatcmpl-af0ce138-fed2-9526-9e2c-11ab9b28f9a3",
+    "model_name": "qwen3.8-flash",
+    "input_tokens": 1643,
+    "output_tokens": 101,
+    "latency_ms": 2317.0753339945804,
+    "estimated_cost": 0.0,
+    "usage_estimated": false,
+    "success": true,
+    "error_type": null
+  }
+}

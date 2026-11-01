@@ -1,0 +1,17 @@
+{
+  "task_count": 50,
+  "split": [
+    "test"
+  ],
+  "metrics": {
+    "supporting_title_recall@2": {
+      "mean": 0.48,
+      "count": 25
+    },
+    "tool_name_accuracy@1": {
+      "mean": 0.8,
+      "count": 25
+    }
+  },
+  "note": "Local retrieval/routing baseline only; this is not the official BFCL AST score or HotpotQA answer/joint score."
+}

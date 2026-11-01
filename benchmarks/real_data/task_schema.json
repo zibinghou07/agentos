@@ -1,0 +1,141 @@
+{
+  "$defs": {
+    "SourceInfo": {
+      "properties": {
+        "dataset": {
+          "enum": [
+            "bfcl_v4_live_multiple",
+            "hotpotqa_distractor"
+          ],
+          "title": "Dataset",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_partition": {
+          "title": "Source Partition",
+          "type": "string"
+        },
+        "source_url": {
+          "title": "Source Url",
+          "type": "string"
+        },
+        "license": {
+          "title": "License",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "ground_truth_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ground Truth Url"
+        },
+        "ground_truth_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ground Truth Sha256"
+        }
+      },
+      "required": [
+        "dataset",
+        "source_id",
+        "source_partition",
+        "source_url",
+        "license",
+        "raw_sha256"
+      ],
+      "title": "SourceInfo",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "task_type": {
+      "enum": [
+        "tool_calling",
+        "multi_hop_qa"
+      ],
+      "title": "Task Type",
+      "type": "string"
+    },
+    "prompt": {
+      "title": "Prompt",
+      "type": "string"
+    },
+    "tools": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Tools",
+      "type": "array"
+    },
+    "context": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Context",
+      "type": "array"
+    },
+    "ground_truth": {
+      "additionalProperties": true,
+      "title": "Ground Truth",
+      "type": "object"
+    },
+    "source": {
+      "$ref": "#/$defs/SourceInfo"
+    },
+    "synthetic": {
+      "const": false,
+      "default": false,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "conversion_version": {
+      "default": "1.0",
+      "title": "Conversion Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "task_id",
+    "split",
+    "task_type",
+    "prompt",
+    "ground_truth",
+    "source"
+  ],
+  "title": "OpenSourceTask",
+  "type": "object"
+}

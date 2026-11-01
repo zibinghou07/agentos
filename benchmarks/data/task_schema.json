@@ -1,0 +1,80 @@
+{
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "family": {
+      "enum": [
+        "single_tool",
+        "multi_tool",
+        "multi_hop",
+        "dependency_dag",
+        "fault_recovery",
+        "long_horizon"
+      ],
+      "title": "Family",
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "prompt": {
+      "title": "Prompt",
+      "type": "string"
+    },
+    "expected_tools": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Tools",
+      "type": "array"
+    },
+    "expected_answer": {
+      "title": "Expected Answer"
+    },
+    "steps": {
+      "minimum": 1,
+      "title": "Steps",
+      "type": "integer"
+    },
+    "synthetic": {
+      "default": true,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "fault": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fault"
+    },
+    "template_id": {
+      "title": "Template Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "task_id",
+    "family",
+    "split",
+    "prompt",
+    "expected_tools",
+    "expected_answer",
+    "steps",
+    "template_id"
+  ],
+  "title": "BenchmarkTask",
+  "type": "object"
+}

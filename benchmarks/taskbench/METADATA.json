@@ -1,0 +1,10 @@
+{
+  "name": "AgentOS-TaskBench Synthetic v1",
+  "synthetic": true,
+  "description": "End-to-end tasks over a synthetic enterprise world. Gold answers and side-effect assertions are computed from agentos.world.data.",
+  "counts": {
+    "dev": 72,
+    "test": 72
+  },
+  "splits": "entity-disjoint dev/test; dev for tuning, test locked"
+}

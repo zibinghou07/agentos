@@ -1,0 +1,11 @@
+model_name: BAAI/bge-small-zh-v1.5
+epochs: 2
+learning_rate: 0.00002
+batch_size: 16
+gradient_accumulation_steps: 2
+max_length: 256
+warmup_ratio: 0.1
+weight_decay: 0.01
+precision: auto
+seed: 42
+

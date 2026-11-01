@@ -1,0 +1,104 @@
+{
+  "methods": {
+    "agentos": {
+      "runs": 9,
+      "task_success_rate": 0.7777777777777778,
+      "task_success_ci95": [
+        0.4444444444444444,
+        1.0
+      ],
+      "avg_check_score": 0.8518518518518519,
+      "avg_llm_calls": 5.444444444444445,
+      "avg_input_tokens": 6352.777777777777,
+      "avg_output_tokens": 657.1111111111111,
+      "avg_total_tokens": 7009.888888888889,
+      "avg_reasoning_tokens": 0,
+      "avg_tool_calls": 3.888888888888889,
+      "avg_tool_errors": 0.7777777777777778,
+      "p50_latency_ms": 32538.475875015138,
+      "p95_latency_ms": 46805.776449810946,
+      "crashed_or_timed_out": 0,
+      "usage_estimated_runs": 0,
+      "hotpot_answer_f1": 0.3157894736842105,
+      "side_effect_violations": 1,
+      "avg_plan_nodes": 3.2222222222222223,
+      "avg_plan_parallelism": 1.5,
+      "avg_replans": 0.1111111111111111,
+      "avg_node_reexecutions": 0
+    }
+  },
+  "by_family": {
+    "agentos": {
+      "analytics": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6505
+      },
+      "fault_outage": {
+        "runs": 1,
+        "task_success_rate": 0,
+        "avg_total_tokens": 9651
+      },
+      "fault_transient": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7351
+      },
+      "hotpotqa_agentic": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7077
+      },
+      "logistics": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 6193
+      },
+      "lookup": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 3646
+      },
+      "multi_hop": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7235
+      },
+      "parallel_cross_source": {
+        "runs": 1,
+        "task_success_rate": 1,
+        "avg_total_tokens": 7409
+      },
+      "policy_action": {
+        "runs": 1,
+        "task_success_rate": 0,
+        "avg_total_tokens": 8022
+      }
+    }
+  },
+  "paired_tests": {},
+  "config": {
+    "split": "dev",
+    "tasks": 9,
+    "methods": [
+      "agentos"
+    ],
+    "repeats": 1,
+    "provider": "bailian",
+    "model": "qwen3.8-max-0902",
+    "enable_thinking": false,
+    "families": {
+      "lookup": 1,
+      "parallel_cross_source": 1,
+      "multi_hop": 1,
+      "analytics": 1,
+      "policy_action": 1,
+      "logistics": 1,
+      "fault_transient": 1,
+      "fault_outage": 1,
+      "hotpotqa_agentic": 1
+    },
+    "token_budget": 150000,
+    "complete_tasks": 9
+  }
+}

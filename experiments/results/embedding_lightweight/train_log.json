@@ -1,0 +1,8 @@
+{
+  "epochs": 120,
+  "seed": 42,
+  "train_pairs": 4,
+  "test_queries": 4,
+  "final_loss": 0.125,
+  "synthetic": true
+}

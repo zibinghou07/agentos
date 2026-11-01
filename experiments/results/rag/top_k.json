@@ -1,0 +1,266 @@
+{
+  "bm25:q1": [
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 2.3522347848013148
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "bm25:q2": [
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 3.6406604693145015
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    }
+  ],
+  "bm25:q3": [
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 5.013804555001159
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "bm25:q4": [
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 5.219700294184803
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "dense_hashing:q1": [
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.29814239699997197
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "dense_hashing:q2": [
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.4629100498862758
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    }
+  ],
+  "dense_hashing:q3": [
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.6063390625908325
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "dense_hashing:q4": [
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.6546536707079772
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.2581988897471611
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.0
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.0
+    }
+  ],
+  "hybrid_rrf:q1": [
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.03278688524590164
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.03225806451612903
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.031746031746031744
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.03125
+    }
+  ],
+  "hybrid_rrf:q2": [
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.03278688524590164
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.03225806451612903
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.031746031746031744
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.03125
+    }
+  ],
+  "hybrid_rrf:q3": [
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.03278688524590164
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.03225806451612903
+    },
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.031746031746031744
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.03125
+    }
+  ],
+  "hybrid_rrf:q4": [
+    {
+      "document_id": "doc_mcp",
+      "text": "Model Context Protocol standardizes tool discovery and invocation between a host client and tool servers.",
+      "score": 0.03278688524590164
+    },
+    {
+      "document_id": "doc_agent",
+      "text": "AgentOS uses DAG scheduling to run independent task nodes concurrently and persists checkpoints in SQLite.",
+      "score": 0.03225806451612903
+    },
+    {
+      "document_id": "doc_rag",
+      "text": "Hybrid retrieval combines sparse BM25 and dense semantic retrieval using reciprocal rank fusion.",
+      "score": 0.031746031746031744
+    },
+    {
+      "document_id": "doc_recovery",
+      "text": "Retry handles transient failures, Repair corrects invalid arguments, and Replan replaces an infeasible plan.",
+      "score": 0.03125
+    }
+  ]
+}

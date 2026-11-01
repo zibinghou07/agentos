@@ -1,0 +1,8 @@
+{
+  "mcnemar_keyword_rules_vs_clause_routing": {
+    "discordant_a_only": 0,
+    "discordant_b_only": 0,
+    "chi_square": 0.0,
+    "p_value": 1.0
+  }
+}
