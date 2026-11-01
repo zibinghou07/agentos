@@ -73,7 +73,7 @@ flowchart TD
 环境要求：Python 3.11+、`make`；第一次安装需要能访问 PyPI。
 
 ```bash
-git clone https://github.com/<your-account>/agentos.git
+git clone https://github.com/zibinghou742-gif/agentos.git
 cd agentos
 make install        # 创建 .venv，安装固定版本的 uv，按 uv.lock 同步依赖
 make test           # 58 个测试，完全离线

@@ -73,7 +73,7 @@ An earlier pilot on `qwen3.8-27b`, run *before* several fixes, is kept for the r
 Requirements: Python 3.11+, `make`, and network access to PyPI for the first install.
 
 ```bash
-git clone https://github.com/<your-account>/agentos.git
+git clone https://github.com/zibinghou742-gif/agentos.git
 cd agentos
 make install        # creates .venv, installs a pinned uv, syncs uv.lock
 make test           # 58 tests, fully offline
