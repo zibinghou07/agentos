@@ -19,19 +19,19 @@ The repository also contains **AgentOS-TaskBench**, an end-to-end benchmark with
 
 ```mermaid
 flowchart TD
-  G[Goal] --> D[MCP tool discovery<br/>7 servers / 23 tools]
-  D --> P[LLM Planner<br/>DAG + contract grounding]
-  P --> S[Event-driven DAG scheduler]
-  S --> R[Agent routing + tool ranking]
-  R --> L[LLM tool decision]
-  L --> X[Tool call + recovery<br/>retry / repair]
-  X --> V[Verifier<br/>JSON Schema]
-  V -->|pass| S
-  V -->|fail| L
-  X -->|exhausted| RP[Partial replan]
+  G["Goal"] --> D["MCP tool discovery<br/>7 servers / 23 tools"]
+  D --> P["LLM Planner<br/>DAG + contract grounding"]
+  P --> S["Event-driven DAG scheduler"]
+  S --> R["Agent routing + tool ranking"]
+  R --> L["LLM tool decision"]
+  L --> X["Tool call + recovery<br/>retry / repair"]
+  X --> V["Verifier<br/>JSON Schema"]
+  V -->|"pass"| S
+  V -->|"fail"| L
+  X -->|"exhausted"| RP["Partial replan"]
   RP --> S
-  S -->|all nodes done| Y[Synthesizer]
-  C[(SQLite WAL<br/>checkpoints, events,<br/>operation ledger, stats)] -.-> S
+  S -->|"all nodes done"| Y["Synthesizer"]
+  C[("SQLite WAL<br/>checkpoints, events,<br/>operation ledger, stats")] -.-> S
 ```
 
 ## Results

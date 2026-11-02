@@ -19,19 +19,19 @@ AgentOS 是一个多智能体任务运行时的研究实现。用户只提交一
 
 ```mermaid
 flowchart TD
-  G[目标 goal] --> D[MCP 工具发现<br/>7 个 server / 23 个工具]
-  D --> P[LLM Planner<br/>生成 DAG + 契约接地]
-  P --> S[事件驱动 DAG 调度器]
-  S --> R[agent 路由 + 工具排序]
-  R --> L[LLM 选择工具并填参数]
-  L --> X[调用工具 + 恢复<br/>重试 / 参数修复]
-  X --> V[Verifier<br/>JSON Schema 验收]
-  V -->|通过| S
-  V -->|不通过| L
-  X -->|恢复用尽| RP[局部重规划]
+  G["目标 goal"] --> D["MCP 工具发现<br/>7 个 server / 23 个工具"]
+  D --> P["LLM Planner<br/>生成 DAG + 契约接地"]
+  P --> S["事件驱动 DAG 调度器"]
+  S --> R["agent 路由 + 工具排序"]
+  R --> L["LLM 选择工具并填参数"]
+  L --> X["调用工具 + 恢复<br/>重试 / 参数修复"]
+  X --> V["Verifier<br/>JSON Schema 验收"]
+  V -->|"通过"| S
+  V -->|"不通过"| L
+  X -->|"恢复用尽"| RP["局部重规划"]
   RP --> S
-  S -->|全部完成| Y[Synthesizer 生成答案]
-  C[(SQLite WAL<br/>检查点、事件、<br/>操作账本、路由统计)] -.-> S
+  S -->|"全部完成"| Y["Synthesizer 生成答案"]
+  C[("SQLite WAL<br/>检查点、事件、<br/>操作账本、路由统计")] -.-> S
 ```
 
 ## 实验结果
