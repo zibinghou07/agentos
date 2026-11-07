@@ -1,0 +1,225 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "ood_musique",
+    "limit": "None",
+    "model": "policy",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seeds": "[0, 1, 2]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "32",
+    "reward": "v11",
+    "closed_book": "False",
+    "dense": "/root/autodl-tmp/models/bge-small-en-v1.5",
+    "enable_thinking": "None",
+    "tag": "pre_rl",
+    "out": "results/rl_eval",
+    "dense_encoder": "/root/autodl-tmp/models/bge-small-en-v1.5"
+  },
+  "per_seed": [
+    {
+      "n": 300,
+      "em": 0.006666666666666667,
+      "em_count": "2/300",
+      "f1": 0.017222222222222222,
+      "reward": -0.1346979091020091,
+      "avg_tool_calls": 1.45,
+      "avg_obs_tokens": 150.21333333333334,
+      "avg_turns": 2.3933333333333335,
+      "valid_call_rate": 0.9977011494252873,
+      "no_answer_rate": 0.83,
+      "done_reasons": {
+        "no_action": 232,
+        "answer": 51,
+        "max_turns": 17
+      },
+      "tool_usage": {
+        "dense_search": 429,
+        "bm25_search": 6
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.00641025641025641,
+          "count": "1/156"
+        },
+        "3hop1": {
+          "em": 0.014084507042253521,
+          "count": "1/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.0,
+          "count": "0/31"
+        },
+        "4hop2": {
+          "em": 0.0,
+          "count": "0/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 556402,
+      "completion_tokens": 26802
+    },
+    {
+      "n": 300,
+      "em": 0.01,
+      "em_count": "3/300",
+      "f1": 0.021814814814814815,
+      "reward": -0.13143377692307695,
+      "avg_tool_calls": 1.2533333333333334,
+      "avg_obs_tokens": 163.38,
+      "avg_turns": 2.223333333333333,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.86,
+      "done_reasons": {
+        "no_action": 249,
+        "answer": 42,
+        "max_turns": 9
+      },
+      "tool_usage": {
+        "bm25_search": 163,
+        "dense_search": 213
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.01282051282051282,
+          "count": "2/156"
+        },
+        "3hop1": {
+          "em": 0.014084507042253521,
+          "count": "1/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.0,
+          "count": "0/31"
+        },
+        "4hop2": {
+          "em": 0.0,
+          "count": "0/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 499173,
+      "completion_tokens": 31553
+    },
+    {
+      "n": 300,
+      "em": 0.006666666666666667,
+      "em_count": "2/300",
+      "f1": 0.013,
+      "reward": -0.16554740549450553,
+      "avg_tool_calls": 1.66,
+      "avg_obs_tokens": 212.36,
+      "avg_turns": 2.5633333333333335,
+      "valid_call_rate": 0.9939759036144579,
+      "no_answer_rate": 0.95,
+      "done_reasons": {
+        "no_action": 256,
+        "max_turns": 29,
+        "answer": 15
+      },
+      "tool_usage": {
+        "bm25_search": 209,
+        "dense_search": 289
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.00641025641025641,
+          "count": "1/156"
+        },
+        "3hop1": {
+          "em": 0.0,
+          "count": "0/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.03225806451612903,
+          "count": "1/31"
+        },
+        "4hop2": {
+          "em": 0.0,
+          "count": "0/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 651662,
+      "completion_tokens": 33592
+    }
+  ],
+  "aggregate": {
+    "seeds": 3,
+    "n": 300,
+    "em": {
+      "mean": 0.007777777777777778,
+      "std": 0.0019245008972987524
+    },
+    "f1": {
+      "mean": 0.01734567901234568,
+      "std": 0.004408704031701422
+    },
+    "reward": {
+      "mean": -0.14389303050653054,
+      "std": 0.018824123002420673
+    },
+    "avg_tool_calls": {
+      "mean": 1.4544444444444444,
+      "std": 0.20336975994296505
+    },
+    "avg_obs_tokens": {
+      "mean": 175.3177777777778,
+      "std": 32.7480525855836
+    },
+    "avg_turns": {
+      "mean": 2.393333333333333,
+      "std": 0.17000000000000015
+    },
+    "valid_call_rate": {
+      "mean": 0.9972256843465818,
+      "std": 0.003040063255324933
+    },
+    "no_answer_rate": {
+      "mean": 0.8799999999999999,
+      "std": 0.06244997998398397
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 569079.0,
+      "std": 77030.86087406788
+    },
+    "completion_tokens": {
+      "mean": 30649.0,
+      "std": 3484.097731120641
+    },
+    "em_count_per_seed": [
+      "2/300",
+      "3/300",
+      "2/300"
+    ]
+  }
+}

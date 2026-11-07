@@ -1,0 +1,103 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "test",
+    "limit": "None",
+    "model": "policy",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seeds": "[0]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "32",
+    "reward": "v11",
+    "closed_book": "True",
+    "dense": "/root/autodl-tmp/models/bge-small-en-v1.5",
+    "enable_thinking": "None",
+    "tag": "pre_rl_closed_book",
+    "out": "results/rl_eval",
+    "dense_encoder": "/root/autodl-tmp/models/bge-small-en-v1.5"
+  },
+  "per_seed": [
+    {
+      "n": 500,
+      "em": 0.0,
+      "em_count": "0/500",
+      "f1": 0.0017777777777777776,
+      "reward": -0.1928,
+      "avg_tool_calls": 0.0,
+      "avg_obs_tokens": 0.0,
+      "avg_turns": 1.0,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.964,
+      "done_reasons": {
+        "answer": 18,
+        "no_action": 482
+      },
+      "tool_usage": {},
+      "em_by_qtype": {
+        "bridge": {
+          "em": 0.0,
+          "count": "0/400"
+        },
+        "comparison": {
+          "em": 0.0,
+          "count": "0/100"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 41535,
+      "completion_tokens": 2729
+    }
+  ],
+  "aggregate": {
+    "seeds": 1,
+    "n": 500,
+    "em": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "f1": {
+      "mean": 0.0017777777777777776,
+      "std": 0.0
+    },
+    "reward": {
+      "mean": -0.1928,
+      "std": 0.0
+    },
+    "avg_tool_calls": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "avg_obs_tokens": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "avg_turns": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "valid_call_rate": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "no_answer_rate": {
+      "mean": 0.964,
+      "std": 0.0
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 41535.0,
+      "std": 0.0
+    },
+    "completion_tokens": {
+      "mean": 2729.0,
+      "std": 0.0
+    },
+    "em_count_per_seed": [
+      "0/500"
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "counts": [
+    {
+      "step": 1,
+      "answer_without_search": 1
+    },
+    {
+      "step": 2
+    },
+    {
+      "step": 3,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 4
+    },
+    {
+      "step": 5,
+      "answer_without_search": 8,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 6,
+      "answer_without_search": 46,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 7,
+      "hedged_or_long_answer": 3,
+      "answer_without_search": 8
+    },
+    {
+      "step": 8,
+      "answer_without_search": 27,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 9,
+      "answer_without_search": 34
+    },
+    {
+      "step": 10,
+      "answer_without_search": 48,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 11,
+      "answer_without_search": 57
+    },
+    {
+      "step": 12,
+      "answer_without_search": 41,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 13,
+      "answer_without_search": 44,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 14,
+      "answer_without_search": 43,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 15,
+      "answer_without_search": 51,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 16,
+      "answer_without_search": 59,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 17,
+      "answer_without_search": 60,
+      "hedged_or_long_answer": 9
+    },
+    {
+      "step": 18,
+      "answer_without_search": 61
+    },
+    {
+      "step": 19,
+      "answer_without_search": 64,
+      "hedged_or_long_answer": 7
+    },
+    {
+      "step": 20,
+      "answer_without_search": 62,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 21,
+      "answer_without_search": 64
+    },
+    {
+      "step": 22,
+      "answer_without_search": 64
+    },
+    {
+      "step": 23,
+      "answer_without_search": 64,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 24,
+      "answer_without_search": 62,
+      "hedged_or_long_answer": 7
+    },
+    {
+      "step": 25,
+      "answer_without_search": 64,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 26,
+      "answer_without_search": 64,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 27,
+      "answer_without_search": 64,
+      "hedged_or_long_answer": 2
+    }
+  ],
+  "examples": {
+    "answer_without_search": [
+      {
+        "step": 27,
+        "score": 0.0,
+        "gts": [
+          "actor and film director"
+        ],
+        "input": "\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Coleman Francis and William Dieterle, have which occupations in common?\nassistant\n",
+        "output": "<answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer> <answer></answer>"
+      },
+      {
+        "step": 27,
+        "score": 0.0,
+        "gts": [
+          "actor and film director"
+        ],
+        "input": "\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Coleman Francis and William Dieterle, have which occupations in common?\nassistant\n",
+        "output": "<answer>actor</answer>"
+      },
+      {
+        "step": 27,
+        "score": 0.0,
+        "gts": [
+          "actor and film director"
+        ],
+        "input": "\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Coleman Francis and William Dieterle, have which occupations in common?\nassistant\n",
+        "output": "<answer>None</answer>"
+      }
+    ],
+    "hedged_or_long_answer": [
+      {
+        "step": 26,
+        "score": 0.0,
+        "gts": [
+          "alternative rock band"
+        ],
+        "input": "\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: What style rock bands are the groups Muzzle and Hello Sleepwalkers?\nassistant\n",
+        "output": "<answer>Metallica, Mindless Self Indulgence, The Offspring, Minor Threat, Skeleton Crew, and Curt Stack Singularity are the notable underground metal and post-hardcore bands associated with style rock.</answer>"
+      },
+      {
+        "step": 27,
+        "score": 0.0,
+        "gts": [
+          "British film director"
+        ],
+        "input": "arch).\", \"parameters\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: What did Seth Holt do that Paul Powell did not?\nassistant\n",
+        "output": "<answer>Seth Holt was a TV host, while Paul Powell did not have this title.</answer>"
+      },
+      {
+        "step": 27,
+        "score": 0.0,
+        "gts": [
+          "British film director"
+        ],
+        "input": "arch).\", \"parameters\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: What did Seth Holt do that Paul Powell did not?\nassistant\n",
+        "output": "<answer>None of the provided Wikipedia paragraphs address the question about what Seth Holt did that Paul Powell did not, as they primarily discuss related individuals rather than specific tasks or actions.</answer>"
+      }
+    ]
+  }
+}

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "agentos-runtime"
 version = "0.2.0"
-description = "Adaptive multi-agent runtime for reproducible complex-task experiments"
+description = "SearchRL: GRPO-trained multi-tool search agent, built on the AgentOS multi-agent runtime"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

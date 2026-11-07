@@ -1,176 +1,118 @@
-# AgentOS
+# AgentOS · SearchRL
 
 [English](README.md) · **简体中文**
 
-AgentOS 是一个多智能体任务运行时的研究实现。用户只提交一个目标（goal）：LLM Planner 把它拆成由多个 agent 子任务组成的 DAG，事件驱动的调度器并行执行互不依赖的子任务。每次工具调用都要经过 MCP 工具发现、JSON Schema 校验、分级恢复（重试 / 参数修复 / 重规划）和程序化验收。运行状态保存在 SQLite 中，任务中断后可以恢复，已经确认过的副作用不会重复执行。
-
-仓库里还有 **AgentOS-TaskBench**：一个端到端评测集，包含一个合成的企业业务世界（订单、库存、退款、政策文档）和 HotpotQA 问答题，全部由程序判分，不用 LLM 当裁判。
-
-## 主要特点
-
-- **Planner → DAG**：一次 LLM 调用把目标拆成带依赖关系的子任务。之后由代码"接地"：删掉不存在的工具，给每个子任务分配有权限使用该工具的 agent；验收标准取自工具真实的输出 schema，不用模型自己猜的。
-- **事件驱动调度**：用 `asyncio.wait(FIRST_COMPLETED)`，节点的依赖一满足就启动，不用等整层完成。
-- **agent 路由与工具排序**：agent 先按能力过滤，再综合语义相关度、Beta 后验成功率、Token 成本和延迟打分（带 ε-greedy 探索）。工具按相关度、历史成功率和延迟排序，由 LLM 从前 5 个候选里选一个。
-- **分级恢复**：先给错误分类。临时错误用带抖动的指数退避重试；参数错误由 LLM 修复；验收失败时带着反馈重跑节点；本地恢复手段用尽后做局部重规划，已成功的节点保留不动。鉴权错误直接失败，不浪费 token。
-- **副作用安全**：工具带 MCP 标注（只读 / 幂等 / 有副作用）。以 `operation_id` 为键的操作账本，保证崩溃恢复后不会重放已确认的操作；有副作用的节点验收失败时，转人工处理，不会重试。
-- **如实评测**：dev / test 按实体隔离，所有合成任务都标了 `synthetic: true`，结果附带置信区间和配对检验。
-
-## 架构
-
-```mermaid
-flowchart TD
-  G["目标 goal"] --> D["MCP 工具发现<br/>7 个 server / 23 个工具"]
-  D --> P["LLM Planner<br/>生成 DAG + 契约接地"]
-  P --> S["事件驱动 DAG 调度器"]
-  S --> R["agent 路由 + 工具排序"]
-  R --> L["LLM 选择工具并填参数"]
-  L --> X["调用工具 + 恢复<br/>重试 / 参数修复"]
-  X --> V["Verifier<br/>JSON Schema 验收"]
-  V -->|"通过"| S
-  V -->|"不通过"| L
-  X -->|"恢复用尽"| RP["局部重规划"]
-  RP --> S
-  S -->|"全部完成"| Y["Synthesizer 生成答案"]
-  C[("SQLite WAL<br/>检查点、事件、<br/>操作账本、路由统计")] -.-> S
-```
+**SearchRL** 用"可验证奖励的强化学习"训练一个小模型：给它检索工具，让它回答多跳问题。每一轮，策略自己决定是做关键词搜索、语义搜索、读一整段原文，还是直接回答；**用更少、更便宜的工具调用答对**，得到的奖励更高。它建立在同一个仓库里的多智能体工具运行时 **AgentOS** 之上（见下文第二部分）。
 
 ## 实验结果
 
-试点评测：**18 条调试中没有用过的 test 任务**（每个任务族 2 条，其中 2 条是 HotpotQA）。模型 `qwen3.8-max-0902`，temperature 0，跑 1 次。原始记录在 [`experiments/results/taskbench/test_max_fresh/`](experiments/results/taskbench/test_max_fresh/)。
+Qwen2.5-1.5B-Instruct + LoRA，在一张 RTX 4090 上用多轮 GRPO 训练。在没参与训练和调参的数据上评测，3 个采样 seed（temperature 0.7）。检查点按 dev 成绩选择，test 只用了一次。
 
-| 方法 | 成功率（95% CI） | 平均 token | P95 延迟 |
-|---|---|---|---|
-| ReAct（原生 function calling，可用全部 23 个工具） | 0.944（0.83–1.00） | 14,948 | 46.0 秒 |
-| 固定角色（研究员 → 分析员 → 客服，最后由 writer 汇总） | 0.667（0.44–0.89） | 16,922 | 95.4 秒 |
-| **AgentOS** | **0.944**（0.83–1.00） | **6,853** | 53.9 秒 |
+| 数据集 | RL 前 EM | RL 后 EM | 内容上的提升¹ | 每题工具调用次数 |
+|---|---|---|---|---|
+| HotpotQA test（500 题） | 6.6% ± 1.4% | **24.6% ± 0.6%** | +9.9 个百分点 | 2.28 → **1.00** |
+| 2WikiMultihopQA，未训练（300 题） | 3.4% ± 1.7% | **18.6% ± 1.2%** | +10.2 个百分点 | 3.05 → **1.00** |
+| MuSiQue，未训练（300 题） | 1.2% ± 0.7% | **7.3% ± 0.9%** | +2.2 个百分点 | 2.00 → **1.00** |
 
-- 对比 ReAct：成功率持平（McNemar p = 0.48），token 少 54.2%；P95 延迟高 17.2%，原因是多了规划和答案合成两次调用。
-- 对比固定角色：成功率高 27.8 个百分点（bootstrap CI +0.05 到 +0.56；McNemar p = 0.13，未达到 0.05 显著），token 少 59.5%，P95 延迟低 43.5%。
+¹ 宽松 EM 的提升：没有写 `<answer>` 标签时，只要最后一轮回复里包含标准答案也算对。这样可以去掉"学会答案格式"带来的那部分提升。
 
-更早的一轮试点在 `qwen3.8-27b` 上进行，当时还没有做几项修复，结果也保留了：AgentOS 只有 0.556，主要原因是最终答案的 JSON 格式不合规。那 18 条任务看过失败原因之后就不再使用，修复后的版本换到没见过的任务上重测。完整过程和失败分析见 [`docs/experiment_report.md`](docs/experiment_report.md)。
+- **答得更准，同时更省**：训练后的策略每题都按要求格式作答（test 上不答题比例从 68% 降到 0%），工具调用减少 56%，读到的检索内容减少 16%。
+- **能迁移到没见过的数据集**：在训练中从未使用的 2WikiMultihopQA 上，提升幅度和 HotpotQA 本身差不多。
+- **独立验证**：训练过程中 verl 自己在 dev 上的验证（贪心解码）显示 EM 从 15.0% 提升到 25.0%，和 test 上"内容上的提升"一致。
+- **已知不足**：策略最后固定成"每题只搜 1 次"，所以需要 3–4 跳的 MuSiQue 提升很小。
 
-**局限：** 样本量 n = 18 比较小；企业世界是合成的；任务生成器和工具出自同一作者。三种方法使用相同的工具、相同的故障注入和相同的程序化判分。
+完整报告（每个 seed 的数字、训练曲线、reward hacking 检查）见 [`results/rl_report.md`](results/rl_report.md)。所有数字都可以用 `scripts/rl_summarize.py` 从保存的轨迹重新算出来。
+
+## SearchRL 的工作方式
+
+```mermaid
+flowchart LR
+  Q["问题"] --> P["策略<br/>Qwen2.5-1.5B + LoRA"]
+  P -->|"调用工具"| T["bm25_search / dense_search /<br/>get_document"]
+  T -->|"本题 100 段资料中的检索结果"| P
+  P -->|"给出答案"| R["奖励"]
+  R --> G["GRPO 更新<br/>每题 8 条轨迹"]
+  G --> P
+```
+
+| 部分 | 设计 |
+|---|---|
+| 数据 | HotpotQA distractor：train 8000 / dev 300 / test 500（dev 和 test 来自官方验证集，互不重叠）。2WikiMultihopQA 和 MuSiQue 各 300 题，只用于测试。泄漏检查见 `results/rl_data_report.json` |
+| 环境 | Gym 风格的 `reset(qid)` / `step(action)`。每道题只在自己的段落池里检索：本题的 10 段，加上其他题目的干扰段落，文档 id 不透明 |
+| 工具 | `bm25_search` 和 `dense_search`（bge-small-en-v1.5）返回短摘要；`get_document` 返回整段原文，消耗的 token 更多 |
+| 奖励 | 完全匹配得分；工具调用格式错误、没有给出答案要扣分；**只对答对的回合**按调用次数和读取的 token 扣成本分（有上限）；超过 6 轮软扣分；检索到标准支撑段落有少量加分（有上限） |
+| 训练 | verl 0.9.1 多轮 GRPO，FSDP2，LoRA r=32，学习率 1e-5，KL 0.001，每步 8 题 × 8 条轨迹，最多 8 轮；工具返回的内容不计入 loss |
+| 评测 | `scripts/rl_eval.py` 用 vLLM 启动模型，重放和训练时完全相同的环境、工具文本和奖励；报告 EM、F1、宽松 EM、调用次数、token 和轮数，给出各 seed 的均值 ± 标准差 |
+
+实践中最关键的两个设计：
+
+- **成本扣分只作用于答对的回合。** 否则"不检索直接回答"会成为最保险的策略。早期一版奖励没有格式示例和检索加分，确实坍缩成了不检索直接作答，最终的设计就是由此确定的。
+- **评测时，模型看到的提示词必须和训练时一模一样。** verl 会精简工具定义，评测会逐字复现同样的文本（有单元测试保证）。
+
+## 复现 SearchRL
+
+数据准备、环境测试和评测在普通电脑上就能做；训练需要一张 24GB、驱动支持 CUDA 13 的 GPU。
+
+```bash
+make install
+bash scripts/rl_download_raw.sh               # 下载 HotpotQA、2Wiki、MuSiQue
+.venv/bin/python scripts/rl_prepare_data.py   # 划分数据、生成检索池和泄漏报告
+.venv/bin/python scripts/rl_make_verl_data.py
+.venv/bin/python -m pytest -q tests/test_rl_env.py
+```
+
+在 GPU 机器上：
+
+```bash
+bash scripts/autodl_setup.sh                                  # 安装 verl 0.9.1、下载模型、计算向量
+EXP=grpo_v11 ATTN=sdpa bash scripts/rl_train_grpo.sh          # LoRA + GRPO 训练
+MODEL=<原始模型> TAG=pre_rl SPLITS="test ood_2wiki ood_musique" bash scripts/rl_serve_and_eval.sh
+MODEL=<原始模型> LORA=<训练输出>/lora_adapter TAG=post_rl SPLITS="test ood_2wiki ood_musique" bash scripts/rl_serve_and_eval.sh
+```
+
+每一步的详细说明和检查方法见 [`docs/rl_runbook.md`](docs/rl_runbook.md)。
+
+**局限**：只训练了一次（50 步）；还没有做消融实验（成本扣分、DAPO 组件），也没有大模型对照；检索池比全维基检索容易；基础模型可能在预训练中见过 HotpotQA。
+
+---
+
+## 第二部分：AgentOS 多智能体运行时
+
+AgentOS 是 SearchRL 的前身，一个工具运行时。LLM Planner 把目标拆成多个 agent 子任务组成的 DAG；事件驱动的调度器（`asyncio.wait(FIRST_COMPLETED)`）并行执行互不依赖的子任务；每次工具调用都要经过 MCP 工具发现、JSON Schema 校验、分级恢复（带退避的重试 / 参数修复 / 局部重规划）和程序化验收；状态保存在 SQLite 中，任务中断后可以恢复，已确认的副作用不会重复执行。
+
+配套的 **AgentOS-TaskBench** 是一个端到端评测集，基于一个合成的企业业务世界（订单、库存、退款、政策；7 个 MCP server、23 个工具），由程序判分。在 18 道未参与调试的 test 任务上（`qwen3.8-max-0902`）做的试点评测中，AgentOS 和 ReAct 基线成功率相同（0.944），token 少 54%；比固定角色多 agent 基线（0.667）高，token 少 60%。样本量 n = 18 偏小，详见 [`docs/taskbench.md`](docs/taskbench.md) 和 [`docs/experiment_report.md`](docs/experiment_report.md)。
+
+用离线 mock 模型试运行：
+
+```bash
+make test                                           # 76 个测试，完全离线
+make demo                                           # 带检查点的小型 DAG
+make mcp-smoke                                      # 内存中走真实 MCP 协议
+make taskbench-dry                                  # 查看评测任务构成，不发请求
+```
+
+要使用真实模型，把 `.env.example` 复制为 `.env`（已被 git 忽略），然后设置 `AGENTOS_PROVIDER=bailian` 和 `DASHSCOPE_API_KEY`；或者设置 `AGENTOS_PROVIDER=openai_compatible`、`AGENTOS_BASE_URL` 和 `AGENTOS_API_KEY`。详见 [`docs/bailian_api.md`](docs/bailian_api.md)。
 
 ## 目录结构
 
 | 路径 | 内容 |
 |---|---|
-| `agentos/runtime/` | 服务编排、DAG 工具函数、调度器、检查点存储、路由、恢复 |
-| `agentos/agents/` | Planner、Executor、Verifier、Synthesizer、agent 角色定义 |
-| `agentos/world/` | 合成企业世界和它的 7 个 MCP server |
-| `agentos/taskbench/` | 任务生成、HotpotQA 适配、故障注入、判分、统计 |
-| `agentos/baselines/` | ReAct 和固定角色两个基线 |
-| `agentos/llm/` | Mock、OpenAI 兼容接口和百炼（DashScope）provider |
-| `agentos/mcp/` | MCP client provider 和早期的演示 server |
-| `agentos/benchmarks/`、`agentos/rag/` | 早期的离线路由微基准和检索基线 |
-| `benchmarks/` | 生成的任务文件和公开数据子集（附来源信息） |
-| `experiments/results/` | 文档里引用的各次运行的原始输出 |
-| `docs/` | 设计说明、评测说明、实验报告 |
-| `tests/` | 58 个单元测试（恢复、幂等、失败分支、判分） |
-
-## 快速开始（不需要 API Key）
-
-环境要求：Python 3.11+、`make`；第一次安装需要能访问 PyPI。
-
-```bash
-git clone https://github.com/zibinghou742-gif/agentos.git
-cd agentos
-make install        # 创建 .venv，安装固定版本的 uv，按 uv.lock 同步依赖
-make test           # 58 个测试，完全离线
-```
-
-用离线 mock 模型试运行：
-
-```bash
-make demo                                          # 带检查点的小型 DAG
-.venv/bin/python scripts/run_e2e_example.py --dry-run
-make mcp-smoke                                     # 内存中走真实 MCP 协议
-make taskbench-dry                                 # 查看评测任务构成，不发请求
-```
-
-## 使用真实模型
-
-1. 复制配置模板，填入你自己的 key。`.env` 已被 git 忽略，**不要提交它**。
-
-   ```bash
-   cp .env.example .env
-   ```
-
-2. 在 `.env` 里选择 provider：
-
-   - **阿里云百炼（DashScope）**，本文的实验结果用的就是它：
-
-     ```dotenv
-     AGENTOS_PROVIDER=bailian
-     AGENTOS_MODEL=qwen3.8-max-0902
-     DASHSCOPE_API_KEY=sk-...
-     AGENTOS_ENABLE_THINKING=false
-     ```
-
-     接口地址会根据 key 的类型自动选择，详见 [`docs/bailian_api.md`](docs/bailian_api.md)。
-
-   - **任何 OpenAI 兼容接口**：
-
-     ```dotenv
-     AGENTOS_PROVIDER=openai_compatible
-     AGENTOS_BASE_URL=https://api.example.com/v1
-     AGENTOS_API_KEY=...
-     AGENTOS_MODEL=<模型名>
-     ```
-
-     用的不是 Qwen 系列接口时，请删掉 `AGENTOS_ENABLE_THINKING` 这一行。只要设置了它，这个参数就会被放进请求体里发出去。
-
-3. 先检查配置，再发一次小额调用：
-
-   ```bash
-   .venv/bin/python scripts/check_bailian.py --dry-run
-   make api-check
-   ```
-
-## 运行 TaskBench
-
-下面的命令都会调用真实模型，会消耗 token。`--token-budget` 表示花到这个预算后，不再启动新的任务。任务按"一条任务跑完所有方法，再跑下一条"的顺序执行，所以即使中途停止，已完成的任务也有完整的对比。
-
-```bash
-# dev 上调试：每个任务族 1 条，只跑 AgentOS
-.venv/bin/python scripts/run_taskbench.py --split dev --per-family 1 --methods agentos \
-  --token-budget 150000 --output experiments/results/taskbench/my_dev/runs.jsonl
-
-# 复现文中的 test 结果（总共约 70 万 token）
-.venv/bin/python scripts/run_taskbench.py --split test --per-family 2 --skip-per-family 2 \
-  --methods react,fixed_roles,agentos --token-budget 900000 \
-  --output experiments/results/taskbench/my_test/runs.jsonl
-```
-
-`--skip-per-family 2` 会跳过每个任务族的前 2 条，因为这些在调试时已经看过了。结果逐行追加写入，中断后用同一个 `--output` 再运行一次，就会接着跑。`runs.jsonl` 旁边会生成 `summary.json`，里面有各方法的指标和配对检验。脚本不会把 mock provider 的结果当作评测结果输出。
-
-`benchmarks/taskbench/` 里的任务文件是确定性生成的，可以用 `make taskbench-data` 重新生成。详见 [`docs/taskbench.md`](docs/taskbench.md)。
-
-## HTTP API
-
-```bash
-make api
-curl -X POST http://127.0.0.1:8000/api/tasks \
-  -H 'Content-Type: application/json' \
-  -d '{"goal": "What is the warranty period and list price of Edge Runner?"}'
-curl http://127.0.0.1:8000/api/tasks/<task_id>
-curl http://127.0.0.1:8000/api/tasks/<task_id>/trace
-```
-
-## 其他实验
-
-- `make benchmark && make evaluate`：离线的工具路由微基准，不调用 LLM，只比较几种启发式路由规则。
-- `make real-data && make real-benchmark`：BFCL v4 / HotpotQA 子集和本地基线，详见 [`docs/real_benchmark.md`](docs/real_benchmark.md)。
-- `scripts/train_lightweight_embedding.py`：小规模 metric learning 冒烟实验。实验报告里如实记录了：它没有带来提升。
-- `examples/`：LangGraph 和 AgentScope 的对照示例。AgentScope 需要单独的环境（见 `examples/agentscope-requirements.txt`）。
+| `agentos/rl/` | SearchRL：数据准备、环境、工具、奖励、评测、verl 适配 |
+| `scripts/rl_*.sh`、`scripts/rl_*.py`、`scripts/autodl_setup.sh` | SearchRL 的数据、训练、评测和分析脚本 |
+| `results/` | SearchRL 报告、评测轨迹、训练曲线和验证记录 |
+| `agentos/runtime/`、`agentos/agents/` | AgentOS 的 Planner、调度器、执行器、验收、恢复、检查点 |
+| `agentos/world/`、`agentos/taskbench/`、`agentos/baselines/` | 合成企业世界、TaskBench 及其 ReAct / 固定角色基线 |
+| `agentos/llm/`、`agentos/mcp/`、`agentos/rag/` | 模型 provider、MCP 客户端、检索基线 |
+| `experiments/results/` | TaskBench 和更早的评测输出 |
+| `docs/` | 上机手册、设计说明和报告 |
+| `tests/` | 76 个单元测试 |
 
 ## 数据与许可证
 
-- 企业世界和 TaskBench 的合成任务都由本仓库代码生成，标注为 `synthetic: true`。
-- `benchmarks/real_data/` 包含公开数据集的子集。每条记录都保留了来源 ID，`METADATA.json` 里记录了下载地址和 SHA-256 校验值：
-  - HotpotQA distractor（Yang et al., 2018），CC BY-SA 4.0
-  - BFCL v4 live-multiple（Gorilla 项目），Apache-2.0
+- HotpotQA distractor（Yang et al., 2018），CC BY-SA 4.0；MuSiQue（Trivedi et al., 2022），CC BY 4.0；2WikiMultihopQA（Ho et al., 2020）从 Hugging Face 镜像下载，再分发前请确认原始许可证。原始文件由脚本下载，不存放在仓库里，SHA-256 校验值记录在 `results/rl_data_report.json`。
+- `benchmarks/real_data/` 中是 AgentOS 使用的少量 HotpotQA 和 BFCL v4（Apache-2.0）子集，保留了来源 id 和校验值。
+- TaskBench 的企业世界是合成数据，标注了 `synthetic: true`。
 
 ## 许可证
 
-代码使用 [MIT License](LICENSE)。公开数据子集沿用上面列出的原始许可证。
+代码使用 [MIT License](LICENSE)。数据集沿用各自的原始许可证。

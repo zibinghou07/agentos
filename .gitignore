@@ -33,3 +33,7 @@ experiments/results/embedding/model_checkpoint/
 # Logs
 logs/
 *.log
+
+# RL run outputs: keep summaries (curves, hacking.json, configs), not bulk dumps
+results/rl_train/*/rollouts/
+results/rl_train/*/tensorboard/

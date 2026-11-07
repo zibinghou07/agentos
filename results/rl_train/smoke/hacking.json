@@ -1,0 +1,85 @@
+{
+  "counts": [
+    {
+      "step": 1,
+      "answer_without_search": 1
+    },
+    {
+      "step": 2,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 3,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 4,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 5,
+      "hedged_or_long_answer": 1,
+      "answer_without_search": 7
+    }
+  ],
+  "examples": {
+    "answer_without_search": [
+      {
+        "step": 5,
+        "score": 0.0,
+        "gts": [
+          "Early Middle Ages"
+        ],
+        "input": "call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Cynfarch Oer, was probably a 6th-century king of the Sub-Roman realm of Rheged, was one of the kingdoms of the \"Hen Ogledd\" (\"Old North\"), the Brittonic-speaking region of what is now Northern England, and southern Scotland, during the post-Roman era, and which time period?\nassistant\n",
+        "output": "<answer>5th century</answer>"
+      },
+      {
+        "step": 5,
+        "score": 0.0,
+        "gts": [
+          "Early Middle Ages"
+        ],
+        "input": "call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Cynfarch Oer, was probably a 6th-century king of the Sub-Roman realm of Rheged, was one of the kingdoms of the \"Hen Ogledd\" (\"Old North\"), the Brittonic-speaking region of what is now Northern England, and southern Scotland, during the post-Roman era, and which time period?\nassistant\n",
+        "output": "<answer>the post-Roman era</answer>"
+      },
+      {
+        "step": 5,
+        "score": 0.0,
+        "gts": [
+          "Early Middle Ages"
+        ],
+        "input": "call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Cynfarch Oer, was probably a 6th-century king of the Sub-Roman realm of Rheged, was one of the kingdoms of the \"Hen Ogledd\" (\"Old North\"), the Brittonic-speaking region of what is now Northern England, and southern Scotland, during the post-Roman era, and which time period?\nassistant\n",
+        "output": "<answer>6th century</answer>"
+      }
+    ],
+    "hedged_or_long_answer": [
+      {
+        "step": 3,
+        "score": 0.0,
+        "gts": [
+          "no"
+        ],
+        "input": "\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Are Bahman Ghobadi and William Castle both American film directors?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Bahman Ghobadi William Castle\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d41b8ffbdc5] William Castle | William Castle (April 24, 1914 – May 31, 1977) was an American film director, producer, screenwriter, and actor.\n2. [d7878815c6e] Bahman Ghobadi | Bahman Ghobadi (Persian: بهمن قبادی‎ ‎ ; Kurdish: به‌همه‌ن قوبادی / Behmen Qubadî) is an Iranian film director, producer and writer of Kurdish ethnicity. He was born on February 1, 1969 in Baneh, Kurd...\n3. [da44d03b557] Marooned in Iraq | Marooned in Iraq (Persian: گم‌گشتگی در عراق/Gomgashtei dar Aragh‎ ‎ , and also known as \"Songs of My Motherland\" Persian: آوازهای سرزمین مادری‌ام‎ ‎ ) is a 2002 Iranian (Kurdish/Persian) film directed...\n</tool_response>\nassistant\n<answer>N/A</answer>"
+      },
+      {
+        "step": 4,
+        "score": 0.0,
+        "gts": [
+          "yes"
+        ],
+        "input": "arameters\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Tom Forman and Anand Patwardhan, are in the film industry?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Tom Forman film industry\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Anand Patwardhan film industry\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d289c482240] Tom Forman (actor) | Tom Forman (February 22, 1893 – November 7, 1926) was an American motion picture actor, director, writer, and producer of the early 1920s.\n2. [d25619472da] Jim Whitesell | Jim Whitesell (born December 27, 1959) is the Associate Head Coach of men's basketball for the Buffalo Bulls. He has previously coached at the Division I level as a head coach at Loyola University Chi...\n3. [dc0feed584d] The Penalty (1941 film) | The Penalty is a 1941 American crime film directed by Harold S. Bucquet and written by Harry Ruskin and John C. Higgins. The film stars Edward Arnold, Lionel Barrymore, Marsha Hunt, Robert Sterling, G...\n</tool_response>\nassistant\n<answer>Both Tom Forman and Anand Patwardhan are in the film industry.</answer>"
+      },
+      {
+        "step": 5,
+        "score": 0.0,
+        "gts": [
+          "McKendree College"
+        ],
+        "input": "ype\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Darron Brittman, had two separate games of 11 steals, the 1st against McKendree University, was formerly called what?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Darron Brittman steals\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [dd3ddec7513] Darron Brittman | Darron Brittman (born September 3, 1962) is a former American basketball player who is best known as the first officially recognized NCAA Division I season steals leader in 1985–86. He is also one of ...\n2. [dde8dc43154] Danny Miles | Danny Miles (born October 9, 1945) is an American former basketball coach. He served as the head men's basketball coach at Oregon Institute of Technology from 1971 to 2016. He achieved his one thousan...\n3. [d845251e68f] Louder Than Bombs (film) | Louder Than Bombs is a 2015 internationally co-produced drama film directed by Joachim Trier, and co-written with Eskil Vogt. The film stars Jesse Eisenberg, Gabriel Byrne, Isabelle Huppert, David Str...\n</tool_response>\nassistant\n\"<answer>Darron Brittman was formerly known as Darron Brittman and Danny Miles.</answer>\""
+      }
+    ]
+  }
+}

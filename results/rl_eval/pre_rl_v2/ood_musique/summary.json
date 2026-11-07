@@ -1,0 +1,225 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "ood_musique",
+    "limit": "None",
+    "model": "policy",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seeds": "[0, 1, 2]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "32",
+    "reward": "v11",
+    "closed_book": "False",
+    "dense": "/root/autodl-tmp/models/bge-small-en-v1.5",
+    "enable_thinking": "None",
+    "tag": "pre_rl_v2",
+    "out": "results/rl_eval",
+    "dense_encoder": "/root/autodl-tmp/models/bge-small-en-v1.5"
+  },
+  "per_seed": [
+    {
+      "n": 300,
+      "em": 0.02,
+      "em_count": "6/300",
+      "f1": 0.04133333333333333,
+      "reward": -0.11701820751470753,
+      "avg_tool_calls": 1.6333333333333333,
+      "avg_obs_tokens": 118.16,
+      "avg_turns": 2.55,
+      "valid_call_rate": 0.9959183673469387,
+      "no_answer_rate": 0.7666666666666667,
+      "done_reasons": {
+        "no_action": 205,
+        "answer": 70,
+        "max_turns": 25
+      },
+      "tool_usage": {
+        "dense_search": 483,
+        "bm25_search": 7
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.019230769230769232,
+          "count": "3/156"
+        },
+        "3hop1": {
+          "em": 0.028169014084507043,
+          "count": "2/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.0,
+          "count": "0/31"
+        },
+        "4hop2": {
+          "em": 0.14285714285714285,
+          "count": "1/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 542867,
+      "completion_tokens": 29255
+    },
+    {
+      "n": 300,
+      "em": 0.01,
+      "em_count": "3/300",
+      "f1": 0.028052910052910055,
+      "reward": -0.133158447008547,
+      "avg_tool_calls": 1.54,
+      "avg_obs_tokens": 143.99666666666667,
+      "avg_turns": 2.47,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.81,
+      "done_reasons": {
+        "no_action": 222,
+        "answer": 57,
+        "max_turns": 21
+      },
+      "tool_usage": {
+        "bm25_search": 222,
+        "dense_search": 240
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.01282051282051282,
+          "count": "2/156"
+        },
+        "3hop1": {
+          "em": 0.0,
+          "count": "0/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.0,
+          "count": "0/31"
+        },
+        "4hop2": {
+          "em": 0.14285714285714285,
+          "count": "1/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 537344,
+      "completion_tokens": 31521
+    },
+    {
+      "n": 300,
+      "em": 0.006666666666666667,
+      "em_count": "2/300",
+      "f1": 0.01712698412698413,
+      "reward": -0.19234105682095684,
+      "avg_tool_calls": 2.83,
+      "avg_obs_tokens": 292.8933333333333,
+      "avg_turns": 3.566666666666667,
+      "valid_call_rate": 0.9941107184923439,
+      "no_answer_rate": 0.91,
+      "done_reasons": {
+        "no_action": 194,
+        "max_turns": 79,
+        "answer": 27
+      },
+      "tool_usage": {
+        "bm25_search": 353,
+        "dense_search": 496
+      },
+      "em_by_qtype": {
+        "2hop": {
+          "em": 0.00641025641025641,
+          "count": "1/156"
+        },
+        "3hop1": {
+          "em": 0.0,
+          "count": "0/71"
+        },
+        "3hop2": {
+          "em": 0.0,
+          "count": "0/24"
+        },
+        "4hop1": {
+          "em": 0.03225806451612903,
+          "count": "1/31"
+        },
+        "4hop2": {
+          "em": 0.0,
+          "count": "0/7"
+        },
+        "4hop3": {
+          "em": 0.0,
+          "count": "0/11"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 980324,
+      "completion_tokens": 44443
+    }
+  ],
+  "aggregate": {
+    "seeds": 3,
+    "n": 300,
+    "em": {
+      "mean": 0.012222222222222223,
+      "std": 0.006938886664887109
+    },
+    "f1": {
+      "mean": 0.02883774250440917,
+      "std": 0.012122244303660329
+    },
+    "reward": {
+      "mean": -0.1475059037814038,
+      "std": 0.03965816490698645
+    },
+    "avg_tool_calls": {
+      "mean": 2.0011111111111113,
+      "std": 0.7193541341859171
+    },
+    "avg_obs_tokens": {
+      "mean": 185.01666666666665,
+      "std": 94.31285566901494
+    },
+    "avg_turns": {
+      "mean": 2.862222222222222,
+      "std": 0.6113767099599735
+    },
+    "valid_call_rate": {
+      "mean": 0.9966763619464275,
+      "std": 0.0030169232719354506
+    },
+    "no_answer_rate": {
+      "mean": 0.8288888888888889,
+      "std": 0.07350988847565817
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 686845.0,
+      "std": 254175.27114768658
+    },
+    "completion_tokens": {
+      "mean": 35073.0,
+      "std": 8193.373175926994
+    },
+    "em_count_per_seed": [
+      "6/300",
+      "3/300",
+      "2/300"
+    ]
+  }
+}

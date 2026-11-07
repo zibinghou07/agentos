@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-11-07T03:05:19.902494+00:00",
+  "seed": 20261106,
+  "pool_size": 100,
+  "counts": {
+    "train": 8000,
+    "dev": 300,
+    "test": 500,
+    "ood_2wiki": 300,
+    "ood_musique": 300,
+    "corpus": 96528
+  },
+  "splits": {
+    "train": {
+      "n": 8000,
+      "qtype": {
+        "comparison": 1544,
+        "bridge": 6456
+      },
+      "level": {
+        "easy": 1590,
+        "medium": 5021,
+        "hard": 1389
+      },
+      "yes_no_answers": 472
+    },
+    "dev": {
+      "n": 300,
+      "qtype": {
+        "bridge": 240,
+        "comparison": 60
+      },
+      "level": {
+        "hard": 300
+      },
+      "yes_no_answers": 18
+    },
+    "test": {
+      "n": 500,
+      "qtype": {
+        "bridge": 400,
+        "comparison": 100
+      },
+      "level": {
+        "hard": 500
+      },
+      "yes_no_answers": 30
+    },
+    "ood_2wiki": {
+      "n": 300,
+      "qtype": {
+        "compositional": 125,
+        "comparison": 73,
+        "inference": 36,
+        "bridge_comparison": 66
+      },
+      "level": {
+        "-": 300
+      },
+      "yes_no_answers": 29
+    },
+    "ood_musique": {
+      "n": 300,
+      "qtype": {
+        "2hop": 156,
+        "3hop1": 71,
+        "4hop1": 31,
+        "4hop2": 7,
+        "3hop2": 24,
+        "4hop3": 11
+      },
+      "level": {
+        "-": 300
+      },
+      "yes_no_answers": 0
+    }
+  },
+  "leakage": {
+    "dev": {
+      "n": 300,
+      "exact_question_in_train": 0,
+      "near_duplicate_question_jaccard>=0.8": 0,
+      "support_title_seen_in_train": 99,
+      "answer_string_seen_in_train": 71
+    },
+    "test": {
+      "n": 500,
+      "exact_question_in_train": 0,
+      "near_duplicate_question_jaccard>=0.8": 0,
+      "support_title_seen_in_train": 175,
+      "answer_string_seen_in_train": 106
+    },
+    "ood_2wiki": {
+      "n": 300,
+      "exact_question_in_train": 0,
+      "near_duplicate_question_jaccard>=0.8": 0,
+      "support_title_seen_in_train": 37,
+      "answer_string_seen_in_train": 63
+    },
+    "ood_musique": {
+      "n": 300,
+      "exact_question_in_train": 0,
+      "near_duplicate_question_jaccard>=0.8": 0,
+      "support_title_seen_in_train": 54,
+      "answer_string_seen_in_train": 46
+    },
+    "qid_in_multiple_eval_splits": 0
+  },
+  "raw_files": {
+    "hotpot_train": {
+      "file": "hotpot_train_0.parquet",
+      "sha256": "76d3bb3048a7cc73c1958107c0c5872a00d7e7d00c105b81e92f6769e7822e68",
+      "source": "hotpotqa/hotpot_qa (distractor), CC BY-SA 4.0"
+    },
+    "hotpot_validation": {
+      "file": "hotpot_validation.parquet",
+      "sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+      "source": "hotpotqa/hotpot_qa (distractor), CC BY-SA 4.0"
+    },
+    "2wiki_validation": {
+      "file": "2wiki_validation.parquet",
+      "sha256": "408e2dbb28edc6c8b9ca3ba0c94d4fc7bf17ffb923766593a3a7f546ab4cba59",
+      "source": "framolfese/2WikiMultihopQA (mirror of 2WikiMultihopQA); check upstream license"
+    },
+    "musique_validation": {
+      "file": "musique_validation.parquet",
+      "sha256": "2d671592a7674a0920d2a595df2e13acd74c8a80997f763ca81484a273f8adfe",
+      "source": "dgslibisey/MuSiQue (answerable), CC BY 4.0"
+    }
+  },
+  "train_candidates_after_dedup": 45224
+}

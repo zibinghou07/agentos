@@ -1,0 +1,7 @@
+tools:
+  - class_name: agentos.rl.verl_tools.SearchTool
+    config: {type: native, tool_name: bm25_search, data_dir: "/root/autodl-tmp/agentos/data/rl", dense: "/root/autodl-tmp/models/bge-small-en-v1.5"}
+  - class_name: agentos.rl.verl_tools.SearchTool
+    config: {type: native, tool_name: dense_search, data_dir: "/root/autodl-tmp/agentos/data/rl", dense: "/root/autodl-tmp/models/bge-small-en-v1.5"}
+  - class_name: agentos.rl.verl_tools.SearchTool
+    config: {type: native, tool_name: get_document, data_dir: "/root/autodl-tmp/agentos/data/rl", dense: "/root/autodl-tmp/models/bge-small-en-v1.5"}

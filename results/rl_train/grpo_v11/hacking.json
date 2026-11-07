@@ -1,0 +1,394 @@
+{
+  "counts": [
+    {
+      "step": 1,
+      "tool_spam": 3,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 2,
+      "tool_spam": 2,
+      "invalid_call_spam": 1,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 3,
+      "tool_spam": 6,
+      "invalid_call_spam": 1,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 4
+    },
+    {
+      "step": 5,
+      "tool_spam": 2,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 6,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 7,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 8,
+      "answer_without_search": 4
+    },
+    {
+      "step": 9,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 10,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 11
+    },
+    {
+      "step": 12,
+      "hedged_or_long_answer": 11,
+      "answer_without_search": 2
+    },
+    {
+      "step": 13,
+      "answer_without_search": 7,
+      "hedged_or_long_answer": 8
+    },
+    {
+      "step": 14,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 15,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 16,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 17
+    },
+    {
+      "step": 18,
+      "answer_without_search": 3,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 19,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 20,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 21,
+      "answer_without_search": 1,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 22
+    },
+    {
+      "step": 23,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 24,
+      "hedged_or_long_answer": 6
+    },
+    {
+      "step": 25,
+      "answer_without_search": 1
+    },
+    {
+      "step": 26,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 27,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 28,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 29,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 30
+    },
+    {
+      "step": 31,
+      "invalid_call_spam": 1
+    },
+    {
+      "step": 32,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 33,
+      "hedged_or_long_answer": 8
+    },
+    {
+      "step": 34
+    },
+    {
+      "step": 35,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 36,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 37
+    },
+    {
+      "step": 38
+    },
+    {
+      "step": 39
+    },
+    {
+      "step": 40,
+      "hedged_or_long_answer": 3
+    },
+    {
+      "step": 41,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 42,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 43,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 44
+    },
+    {
+      "step": 45
+    },
+    {
+      "step": 46,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 47,
+      "hedged_or_long_answer": 5
+    },
+    {
+      "step": 48
+    },
+    {
+      "step": 49,
+      "hedged_or_long_answer": 4
+    },
+    {
+      "step": 50,
+      "hedged_or_long_answer": 2
+    },
+    {
+      "step": 51
+    },
+    {
+      "step": 52
+    },
+    {
+      "step": 53
+    },
+    {
+      "step": 54,
+      "hedged_or_long_answer": 1
+    },
+    {
+      "step": 55
+    },
+    {
+      "step": 56
+    },
+    {
+      "step": 57
+    },
+    {
+      "step": 58
+    },
+    {
+      "step": 59
+    },
+    {
+      "step": 60,
+      "hedged_or_long_answer": 5
+    },
+    {
+      "step": 61
+    },
+    {
+      "step": 62
+    },
+    {
+      "step": 63
+    },
+    {
+      "step": 64
+    },
+    {
+      "step": 65
+    },
+    {
+      "step": 66
+    },
+    {
+      "step": 67
+    },
+    {
+      "step": 68
+    },
+    {
+      "step": 69
+    },
+    {
+      "step": 70
+    },
+    {
+      "step": 71
+    },
+    {
+      "step": 72
+    },
+    {
+      "step": 73
+    },
+    {
+      "step": 74
+    }
+  ],
+  "examples": {
+    "tool_spam": [
+      {
+        "step": 3,
+        "score": -0.20000000298023224,
+        "gts": [
+          "raise money"
+        ],
+        "input": "es\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Nick Owen, an English television presenter and newsreader, participated in Romany Wood to do what?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d9ecab8b678] Masterminds (2016 film) | Masterminds is a 2016 American comedy film based on the October 1997 Loomis Fargo Robbery in North Carolina. Directed by Jared Hess and written by Chris Bowman, Hubbel Palmer and Emily Spivey, the fil...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d87988a7885] Chris Owen (actor) | Chris Owen (born September 25, 1980) is an American actor and photographer. He is best known for his role as The Sherminator in the \"American Pie film franchise\", appearing in \"American Pie\", \"America...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d9ecab8b678] Masterminds (2016 film) | Masterminds is a 2016 American comedy film based on the October 1997 Loomis Fargo Robbery in North Carolina. Directed by Jared Hess and written by Chris Bowman, Hubbel Palmer and Emily Spivey, the fil...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d87988a7885] Chris Owen (actor) | Chris Owen (born September 25, 1980) is an American actor and photographer. He is best known for his role as The Sherminator in the \"American Pie film franchise\", appearing in \"American Pie\", \"America...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d9ecab8b678] Masterminds (2016 film) | Masterminds is a 2016 American comedy film based on the October 1997 Loomis Fargo Robbery in North Carolina. Directed by Jared Hess and written by Chris Bowman, Hubbel Palmer and Emily Spivey, the fil...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Nick Owen Romany Wood\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d44c4dac5d9] Romany Wood | Romany Wood is a 40 minute musical work for children's voices, narrator and orchestra. It is a unique work that was written to connect children with classical music and to raise money for charity. The...\n2. [de884b923be] Nick Owen | (born 1 November 1947) is an English television presenter and newsreader, best known for presenting the breakfast television programme \"TV-am\" and the BBC's local news show \"Midlands Today\" since 1997...\n3. [d87988a7885] Chris Owen (actor) | Chris Owen (born September 25, 1980) is an American actor and photographer. He is best known for his role as The Sherminator in the \"American Pie film franchise\", appearing in \"American Pie\", \"America...\n</tool_response>\nassistant\n"
+      },
+      {
+        "step": 5,
+        "score": -0.30000001192092896,
+        "gts": [
+          "K. V. Anand"
+        ],
+        "input": "d\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: With a soundtrack composed by Hiphop Tamizha, who directed the 2017 Indian Tamil-language thriller film Kavan?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Kavan director 2017 Tamil film soundtrack\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n2. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n3. [ddaae8cdaea] Rum (film) | Rum (English: Verdict ) is a 2017 Indian Tamil-language horror heist thriller film written and directed by Sai Bharath. Featuring Hrishikesh, Narain, Sanchita Shetty and Miya George in the lead roles,...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Hiphop Tamizha soundtrack films director\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [daac9ae2cdd] Hiphop Tamizha | Hiphop Tamizha (pronounced \"Tamiḻā\") is an Indian musical duo based in Chennai, Tamil Nadu. The duo consists of Adhithya \"Adhi\" Venkatapathy and R. Jeeva. Hiphop Tamizha are credited with being the pi...\n2. [ddaf77ebb4c] Meesaya Murukku | Meesaya Murukku (English: \"Twirl your moustache\" ) is a 2017 Indian Tamil-language romantic musical film directed by Adhi of Hiphop Tamizha in his directorial debut. He also stars as the lead along wi...\n3. [ddaae8cdaea] Rum (film) | Rum (English: Verdict ) is a 2017 Indian Tamil-language horror heist thriller film written and directed by Sai Bharath. Featuring Hrishikesh, Narain, Sanchita Shetty and Miya George in the lead roles,...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"director Kavan 2017 Tamil Tamil story\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n2. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n3. [dc5eedd407d] Kirumi | Kirumi (English: Germ ) is a 2015 Indian Tamil-language thriller film written, directed and edited by Anucharan as his debut feature. The film co-written by M. Manikandan and produced by JPR Films, st...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"director Vivegama 2017\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n2. [d8ffcfd2142] Mersal (film) | Mersal (English: \"Astonish\") is a 2017 Indian Tamil-language action film starring actor Vijay in triple roles with Samantha, Nithya Menon and Kajal Aggarwal playing the female-lead roles. The film is ...\n3. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"director Kavan 2017 Tamil story\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n2. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n3. [dc5eedd407d] Kirumi | Kirumi (English: Germ ) is a 2015 Indian Tamil-language thriller film written, directed and edited by Anucharan as his debut feature. The film co-written by M. Manikandan and produced by JPR Films, st...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"What films were directed by Vivegam, and what year were they released?\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n2. [d8ffcfd2142] Mersal (film) | Mersal (English: \"Astonish\") is a 2017 Indian Tamil-language action film starring actor Vijay in triple roles with Samantha, Nithya Menon and Kajal Aggarwal playing the female-lead roles. The film is ...\n3. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Siva as director\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d9249042aef] Vivegam | Vivegam (English: \"Prudence\" ) is a 2017 Indian Tamil-language action thriller film co-written and directed by Siva. The movie features Ajith Kumar as primary lead, with Vivek Oberoi, Kajal Aggarwal a...\n2. [d426d0da7da] Kavan (film) | Kavan (English: \"Catapult\" ) is a 2017 Indian Tamil-language thriller film directed by K. V. Anand, written by Subha and Kabilan Vairamuthu and produced by AGS Entertainment. The film stars Vijay Seth...\n3. [dc5eedd407d] Kirumi | Kirumi (English: Germ ) is a 2015 Indian Tamil-language thriller film written, directed and edited by Anucharan as his debut feature. The film co-written by M. Manikandan and produced by JPR Films, st...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"directed Kirumi 2015 film\", \"k\": 3}}\n</tool_call>"
+      },
+      {
+        "step": 5,
+        "score": -0.30000001192092896,
+        "gts": [
+          "December 1988"
+        ],
+        "input": "ect\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: When was the American death metal band formed in who's album is The Wretched Spawn?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"The Wretched Spawn\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d5275d143cd] The Wretched Spawn | The Wretched Spawn is the ninth studio album by American death metal band Cannibal Corpse. The cover art is by Vincent Locke. This is the last studio album to feature Jack Owen, one of the band's foun...\n2. [df3612dc6e6] Wretched (metal band) | Wretched is an American extreme metal band from Charlotte, North Carolina founded by Marshall Wieczorek and Steven Fundenburk in 2005. Wretched's musical style incorporates elements of melodic death m...\n3. [d9cbed1443b] Cannibal Corpse | Cannibal Corpse is an American death metal band from Buffalo, New York. Formed in December 1988, the band has released thirteen studio albums, two box sets, four video albums, and two live albums. The...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Marshall Wieczorek\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d8dac082e91] Ozzie Canseco | Osvaldo \"Ozzie\" Canseco Capas (born July 2, 1964) is a Cuban-American former Major League Baseball player and the identical twin brother of former Major League Baseball player José Canseco.\n2. [df3612dc6e6] Wretched (metal band) | Wretched is an American extreme metal band from Charlotte, North Carolina founded by Marshall Wieczorek and Steven Fundenburk in 2005. Wretched's musical style incorporates elements of melodic death m...\n3. [d4e9e57690a] Fred Haise | Fred Wallace Haise Jr. ( ; born November 14, 1933) is an American former NASA astronaut, fighter pilot with the U.S. Marine Corps and the U.S. Air Force and test pilot. He is one of only 24 people to ...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Stephen Fundenburk\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d568880962a] David Siegel (executive) | David Siegel ( ) is the current CEO of Investopedia. In the past, he served as the President of SeekingAlpha and a Senior Vice President for 1-800 Flowers. Siegel has earned both a BA in Philosophy, P...\n2. [d5c07d6e766] Returning Home | Returning Home (Norwegian: Å vende tilbake ) is a 2015 Norwegian drama film directed by Henrik Martin Dahlsbakken. It was one of three films shortlisted by Norway to be their submission for the Academ...\n3. [d56a297c34a] Gerhard Reinke's Wanderlust | Gerhard Reinke's Wanderlust was a mockumentary television comedy broadcast on the American cable channel Comedy Central in Spring 2003. It starred writer-comedian Josh Gardner, appearing under the nam...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"The Wretched Spawn\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d5275d143cd] The Wretched Spawn | The Wretched Spawn is the ninth studio album by American death metal band Cannibal Corpse. The cover art is by Vincent Locke. This is the last studio album to feature Jack Owen, one of the band's foun...\n2. [df3612dc6e6] Wretched (metal band) | Wretched is an American extreme metal band from Charlotte, North Carolina founded by Marshall Wieczorek and Steven Fundenburk in 2005. Wretched's musical style incorporates elements of melodic death m...\n3. [d9cbed1443b] Cannibal Corpse | Cannibal Corpse is an American death metal band from Buffalo, New York. Formed in December 1988, the band has released thirteen studio albums, two box sets, four video albums, and two live albums. The...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Marshall Wieczorek\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d8dac082e91] Ozzie Canseco | Osvaldo \"Ozzie\" Canseco Capas (born July 2, 1964) is a Cuban-American former Major League Baseball player and the identical twin brother of former Major League Baseball player José Canseco.\n2. [df3612dc6e6] Wretched (metal band) | Wretched is an American extreme metal band from Charlotte, North Carolina founded by Marshall Wieczorek and Steven Fundenburk in 2005. Wretched's musical style incorporates elements of melodic death m...\n3. [d4e9e57690a] Fred Haise | Fred Wallace Haise Jr. ( ; born November 14, 1933) is an American former NASA astronaut, fighter pilot with the U.S. Marine Corps and the U.S. Air Force and test pilot. He is one of only 24 people to ...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Steven Fundenburk\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d568880962a] David Siegel (executive) | David Siegel ( ) is the current CEO of Investopedia. In the past, he served as the President of SeekingAlpha and a Senior Vice President for 1-800 Flowers. Siegel has earned both a BA in Philosophy, P...\n2. [d8537662bef] Jerick McKinnon | Jerick Deshun McKinnon (born May 3, 1992) is an American football running back for the Minnesota Vikings of the National Football League (NFL). He was drafted by the Vikings in the third round of the ...\n3. [d5c07d6e766] Returning Home | Returning Home (Norwegian: Å vende tilbake ) is a 2015 Norwegian drama film directed by Henrik Martin Dahlsbakken. It was one of three films shortlisted by Norway to be their submission for the Academ...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Vincent Locke\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d5275d143cd] The Wretched Spawn | The Wretched Spawn is the ninth studio album by American death metal band Cannibal Corpse. The cover art is by Vincent Locke. This is the last studio album to feature Jack Owen, one of the band's foun...\n2. [dd9b26cb167] Rules for a Knight | Rules for a Knight is a novel written by Ethan Hawke and illustrated by Ryan Hawke. The story takes place in the 15th century and is written in the form of a letter from the novel's protagonist, Sir T...\n3. [dfe5dc4159d] Moll Flanders (1996 film) | Moll Flanders is a 1996 film starring Robin Wright and Morgan Freeman. The film was directed by Pen Densham. The original music score was composed by Mark Mancina. The film is based on the novel of th...\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Jack Owen\", \"k\": 3}}\n</tool_call>"
+      }
+    ],
+    "hedged_or_long_answer": [
+      {
+        "step": 60,
+        "score": 0.05000000074505806,
+        "gts": [
+          "for commanding Easy Company"
+        ],
+        "input": ": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: what did the officer that played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\" best known for \nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"officer that played U.S. Army Major Richard Winters HBO miniseries Band of Brothers\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d41c0069eec] Damian Lewis | Damian Watcyn Lewis, {'1': \", '2': \", '3': \", '4': \"} (born 11 February 1971) is an English actor and producer. He played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\", whic...\n2. [d7ade3663ca] Myron N. Ranney | Staff Sergeant Myron N. \"Mike\" Ranney (11 November 192222 September 1988) was a non-commissioned officer with Easy Company, 2nd Battalion, 506th Parachute Infantry Regiment, in the 101st Airborne Divi...\n3. [da350fecc0d] Norman Dike | Norman Staunton Dike, Jr. (19 May 191823 June 1989) was an officer of the United States Army who later served in the U.S. Army Reserve. During World War II he was a lieutenant and captain in the 101st...\n</tool_response>\nassistant\n<answer>played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\"</answer>"
+      },
+      {
+        "step": 60,
+        "score": 0.10000000149011612,
+        "gts": [
+          "for commanding Easy Company"
+        ],
+        "input": ": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: what did the officer that played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\" best known for \nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"U.S. Army Major Richard Winters HBO miniseries 'Band of Brothers' best known for\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d41c0069eec] Damian Lewis | Damian Watcyn Lewis, {'1': \", '2': \", '3': \", '4': \"} (born 11 February 1971) is an English actor and producer. He played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\", whic...\n2. [d3e2c94e9d5] Richard Winters | Major Richard Davis \"Dick\" Winters (January 21, 1918January 2, 2011) was an officer of the United States Army and a decorated war veteran. He is best known for commanding Easy Company of the 2nd Batta...\n3. [d7ade3663ca] Myron N. Ranney | Staff Sergeant Myron N. \"Mike\" Ranney (11 November 192222 September 1988) was a non-commissioned officer with Easy Company, 2nd Battalion, 506th Parachute Infantry Regiment, in the 101st Airborne Divi...\n</tool_response>\nassistant\n<answer>U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\"</answer>"
+      },
+      {
+        "step": 60,
+        "score": 0.10000000149011612,
+        "gts": [
+          "for commanding Easy Company"
+        ],
+        "input": ": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: what did the officer that played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\" best known for \nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"U. S. Army Major Richard Winters HBO miniseries Band of Brothers officer best known for\", \"k\": 3}}\n</tool_call>\nuser\n<tool_response>\n1. [d7ade3663ca] Myron N. Ranney | Staff Sergeant Myron N. \"Mike\" Ranney (11 November 192222 September 1988) was a non-commissioned officer with Easy Company, 2nd Battalion, 506th Parachute Infantry Regiment, in the 101st Airborne Divi...\n2. [d3e2c94e9d5] Richard Winters | Major Richard Davis \"Dick\" Winters (January 21, 1918January 2, 2011) was an officer of the United States Army and a decorated war veteran. He is best known for commanding Easy Company of the 2nd Batta...\n3. [d41c0069eec] Damian Lewis | Damian Watcyn Lewis, {'1': \", '2': \", '3': \", '4': \"} (born 11 February 1971) is an English actor and producer. He played U.S. Army Major Richard Winters in the HBO miniseries \"Band of Brothers\", whic...\n</tool_response>\nassistant\n<answer>playing Officer of the United States Army and a decorated war veteran in HBO miniseries \"Band of Brothers\"</answer>"
+      }
+    ],
+    "invalid_call_spam": [
+      {
+        "step": 2,
+        "score": -0.699999988079071,
+        "gts": [
+          "The Bluebells"
+        ],
+        "input": "ect\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Who has been active for the longer period of time, The Bluebells or Gnarls Barkley?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"The Bluebells Gnarls Barkley\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'bm25_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Gnarls Barkley\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'bm25_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"The Bluebells\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'bm25_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"The Bluebells Gnarls Barkley\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'dense_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Gnarls Barkley\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'dense_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"The Bluebells\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nError: invalid arguments for 'dense_search': 10 is greater than the maximum of 5\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bgm_search\", \"arguments\": {\"query\": \"The Bluebells Gnarls Barkley official single\", \"k\": 10}}\n</tool_call>\nuser\n<tool_response>\nUnknown function 'bgm_search'. Available tools: ['bm25_search', 'dense_search', 'get_document']\n</tool_response>\nassistant\n<tool_call>\n{\"name\": \"bgm_search\", \"arguments\": {\"query\": \"Gnarls Barkley\", \"k\": 10}}\n</tool_call>"
+      },
+      {
+        "step": 3,
+        "score": -0.25,
+        "gts": [
+          "no"
+        ],
+        "input": "\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Are Bahman Ghobadi and William Castle both American film directors?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"Bahman Ghobadi\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"William Castle\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"bm25_search\", \"arguments\": {\"query\": \"American film director\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Bahman Ghobadi\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"William Castle\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"American film director\", \"k\": 3}}\n</tool_call>\n<tool_call>\n....\n<tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Bahman Ghobadi\", \"k\": 3}}\n</tool_call>\n<tool_call>\n...\n<ActionResult>\n<tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Bahman Ghobadi\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"William Castle\", \"k\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"American film director\", \"k\": 3}}\n</tool_call>\n<tool_call>\n<tool_call>\n{\"name\": \"answer\", \"arguments\": {}}\n</tool_call>\nuser\n<tool_response>\n1. [d7878815c6e] Bahman Ghobadi | Bahman Ghobadi (Persian: بهمن قبادی‎ ‎ ; Kurdish: به‌همه‌ن قوبادی / Behmen Qubadî) is an Iranian film director, producer and writer of Kurdish ethnicity. He was born on February 1, 1969 in Baneh, Kurd...\n2. [da44d03b557] Marooned in Iraq | Marooned in Iraq (Persian: گم‌گشتگی در عراق/Gomgashtei dar Aragh‎ ‎ , and also known as \"Songs of My Motherland\" Persian: آوازهای سرزمین مادری‌ام‎ ‎ ) is a 2002 Iranian (Kurdish/Persian) film directed...\n3. [dd3138505f6] A Time for Drunken Horses | A Time for Drunken Horses (Central Kurdish: کاتێک بۆ مەستیی ئەسپەکان‎ , Persian: زمانی برای مستی اسب‌ها‎ ‎ , \"Zamani barayé masti asbha\", Kurdish: Demek jibo hespên serxweş‎ ) is a 2000 Iranian (Kurdi...\n</tool_response>\nassistant\n<answer>False</answer>"
+      },
+      {
+        "step": 31,
+        "score": -0.5,
+        "gts": [
+          "Ashley Tisdale"
+        ],
+        "input": "a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Mallory Jansen (born 18 June 1989) is an Australian actress, she had recurring roles in the ABC Family sitcom Young & Hungry is an American sitcom created by David Holden, and executive produced by who?\nassistant\n",
+        "output": "<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Mallory Jansen born 18 June 1989\",'k': 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"Young & Hungry ABC Family sitcom\",'k': 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"dense_search\", \"arguments\": {\"query\": \"David Holden executive produced\",'k': 3}}\n</tool_call>"
+      }
+    ],
+    "answer_without_search": [
+      {
+        "step": 18,
+        "score": 0.0,
+        "gts": [
+          "China"
+        ],
+        "input": "meters\": {\"type\": \"object\", \"properties\": {\"doc_id\": {\"type\": \"string\"}}, \"required\": [\"doc_id\"]}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Panjin and Echeng District are both located in which country?\nassistant\n",
+        "output": "<answer>Taiwan Province, China</answer>"
+      },
+      {
+        "step": 21,
+        "score": 1.0,
+        "gts": [
+          "Michigan"
+        ],
+        "input": "ptember 21, 1645last seen May 1700) was a French Canadian explorer known for his discoveries in North America, Jolliet and Jesuit Father Jacques Marquette S.J. (June 1, 1637 – May 18, 1675), sometimes known as Père Marquette or James Marquette, was a French Jesuit missionary who founded Michigan's first European settlement, Sault Ste. Marie, and later founded St. Ignace, in which state?\nassistant\n",
+        "output": "<answer>Michigan</answer>"
+      },
+      {
+        "step": 25,
+        "score": 0.0,
+        "gts": [
+          "1995"
+        ],
+        "input": "r each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\nuser\nQuestion: Congo is an action adventure film, released in which year, loosely based on Michael Crichton's novel of the same name, it stars Laura Linney, an American actress and singer?\nassistant\n",
+        "output": "<answer>2008</answer>"
+      }
+    ]
+  }
+}

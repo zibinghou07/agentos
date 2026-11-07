@@ -1,0 +1,193 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "ood_2wiki",
+    "limit": "None",
+    "model": "policy",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seeds": "[0, 1, 2]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "32",
+    "reward": "v11",
+    "closed_book": "False",
+    "dense": "/root/autodl-tmp/models/bge-small-en-v1.5",
+    "enable_thinking": "None",
+    "tag": "post_rl_v11_step50_v2",
+    "out": "results/rl_eval",
+    "dense_encoder": "/root/autodl-tmp/models/bge-small-en-v1.5"
+  },
+  "per_seed": [
+    {
+      "n": 300,
+      "em": 0.19666666666666666,
+      "em_count": "59/300",
+      "f1": 0.23736002886002883,
+      "reward": 0.2606097333333333,
+      "avg_tool_calls": 1.0,
+      "avg_obs_tokens": 166.75333333333333,
+      "avg_turns": 2.0,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.0033333333333333335,
+      "done_reasons": {
+        "answer": 299,
+        "no_action": 1
+      },
+      "tool_usage": {
+        "dense_search": 300
+      },
+      "em_by_qtype": {
+        "bridge_comparison": {
+          "em": 0.2878787878787879,
+          "count": "19/66"
+        },
+        "comparison": {
+          "em": 0.3972602739726027,
+          "count": "29/73"
+        },
+        "compositional": {
+          "em": 0.088,
+          "count": "11/125"
+        },
+        "inference": {
+          "em": 0.0,
+          "count": "0/36"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 390858,
+      "completion_tokens": 15238
+    },
+    {
+      "n": 300,
+      "em": 0.17333333333333334,
+      "em_count": "52/300",
+      "f1": 0.2033944203944204,
+      "reward": 0.23927306666666667,
+      "avg_tool_calls": 1.0,
+      "avg_obs_tokens": 167.48,
+      "avg_turns": 2.0,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.0,
+      "done_reasons": {
+        "answer": 300
+      },
+      "tool_usage": {
+        "dense_search": 300
+      },
+      "em_by_qtype": {
+        "bridge_comparison": {
+          "em": 0.24242424242424243,
+          "count": "16/66"
+        },
+        "comparison": {
+          "em": 0.3287671232876712,
+          "count": "24/73"
+        },
+        "compositional": {
+          "em": 0.096,
+          "count": "12/125"
+        },
+        "inference": {
+          "em": 0.0,
+          "count": "0/36"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 391094,
+      "completion_tokens": 14590
+    },
+    {
+      "n": 300,
+      "em": 0.18666666666666668,
+      "em_count": "56/300",
+      "f1": 0.21764045214045216,
+      "reward": 0.2512276666666667,
+      "avg_tool_calls": 1.0,
+      "avg_obs_tokens": 166.42333333333335,
+      "avg_turns": 2.0,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.0,
+      "done_reasons": {
+        "answer": 300
+      },
+      "tool_usage": {
+        "dense_search": 300
+      },
+      "em_by_qtype": {
+        "bridge_comparison": {
+          "em": 0.25757575757575757,
+          "count": "17/66"
+        },
+        "comparison": {
+          "em": 0.3561643835616438,
+          "count": "26/73"
+        },
+        "compositional": {
+          "em": 0.088,
+          "count": "11/125"
+        },
+        "inference": {
+          "em": 0.05555555555555555,
+          "count": "2/36"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 390868,
+      "completion_tokens": 15232
+    }
+  ],
+  "aggregate": {
+    "seeds": 3,
+    "n": 300,
+    "em": {
+      "mean": 0.18555555555555556,
+      "std": 0.011706281947614146
+    },
+    "f1": {
+      "mean": 0.2194649671316338,
+      "std": 0.017056150820878007
+    },
+    "reward": {
+      "mean": 0.2503701555555556,
+      "std": 0.010694149339258833
+    },
+    "avg_tool_calls": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "avg_obs_tokens": {
+      "mean": 166.88555555555556,
+      "std": 0.5405998040585444
+    },
+    "avg_turns": {
+      "mean": 2.0,
+      "std": 0.0
+    },
+    "valid_call_rate": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "no_answer_rate": {
+      "mean": 0.0011111111111111111,
+      "std": 0.0019245008972987527
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 390940.0,
+      "std": 133.46160496562297
+    },
+    "completion_tokens": {
+      "mean": 15020.0,
+      "std": 372.40300750665267
+    },
+    "em_count_per_seed": [
+      "59/300",
+      "52/300",
+      "56/300"
+    ]
+  }
+}

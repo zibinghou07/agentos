@@ -1,0 +1,177 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "test",
+    "limit": "None",
+    "model": "policy",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seeds": "[0, 1, 2]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "32",
+    "reward": "v11",
+    "closed_book": "False",
+    "dense": "/root/autodl-tmp/models/bge-small-en-v1.5",
+    "enable_thinking": "None",
+    "tag": "post_rl_v11_step50",
+    "out": "results/rl_eval",
+    "dense_encoder": "/root/autodl-tmp/models/bge-small-en-v1.5"
+  },
+  "per_seed": [
+    {
+      "n": 500,
+      "em": 0.058,
+      "em_count": "29/500",
+      "f1": 0.09217936507936508,
+      "reward": -0.028001360000000013,
+      "avg_tool_calls": 1.496,
+      "avg_obs_tokens": 152.064,
+      "avg_turns": 2.434,
+      "valid_call_rate": 0.9986631016042781,
+      "no_answer_rate": 0.634,
+      "done_reasons": {
+        "no_action": 286,
+        "answer": 183,
+        "max_turns": 31
+      },
+      "tool_usage": {
+        "dense_search": 722,
+        "bm25_search": 26
+      },
+      "em_by_qtype": {
+        "bridge": {
+          "em": 0.0525,
+          "count": "21/400"
+        },
+        "comparison": {
+          "em": 0.08,
+          "count": "8/100"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 959169,
+      "completion_tokens": 41900
+    },
+    {
+      "n": 500,
+      "em": 0.062,
+      "em_count": "31/500",
+      "f1": 0.08763387470727625,
+      "reward": -0.02829680000000001,
+      "avg_tool_calls": 1.51,
+      "avg_obs_tokens": 211.24,
+      "avg_turns": 2.444,
+      "valid_call_rate": 0.9973509933774835,
+      "no_answer_rate": 0.668,
+      "done_reasons": {
+        "no_action": 301,
+        "answer": 166,
+        "max_turns": 33
+      },
+      "tool_usage": {
+        "dense_search": 418,
+        "bm25_search": 337
+      },
+      "em_by_qtype": {
+        "bridge": {
+          "em": 0.055,
+          "count": "22/400"
+        },
+        "comparison": {
+          "em": 0.09,
+          "count": "9/100"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 1031865,
+      "completion_tokens": 47880
+    },
+    {
+      "n": 500,
+      "em": 0.048,
+      "em_count": "24/500",
+      "f1": 0.06277619047619049,
+      "reward": -0.08535124000000002,
+      "avg_tool_calls": 2.06,
+      "avg_obs_tokens": 291.04,
+      "avg_turns": 2.914,
+      "valid_call_rate": 0.9970873786407767,
+      "no_answer_rate": 0.82,
+      "done_reasons": {
+        "no_action": 337,
+        "max_turns": 73,
+        "answer": 90
+      },
+      "tool_usage": {
+        "dense_search": 640,
+        "bm25_search": 390
+      },
+      "em_by_qtype": {
+        "bridge": {
+          "em": 0.0475,
+          "count": "19/400"
+        },
+        "comparison": {
+          "em": 0.05,
+          "count": "5/100"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 1404692,
+      "completion_tokens": 57459
+    }
+  ],
+  "aggregate": {
+    "seeds": 3,
+    "n": 500,
+    "em": {
+      "mean": 0.056,
+      "std": 0.007211102550927978
+    },
+    "f1": {
+      "mean": 0.08086314342094393,
+      "std": 0.015827784772354667
+    },
+    "reward": {
+      "mean": -0.04721646666666668,
+      "std": 0.033026012839683414
+    },
+    "avg_tool_calls": {
+      "mean": 1.6886666666666665,
+      "std": 0.32166027627503735
+    },
+    "avg_obs_tokens": {
+      "mean": 218.1146666666667,
+      "std": 69.74258329982719
+    },
+    "avg_turns": {
+      "mean": 2.5973333333333333,
+      "std": 0.2742869543622761
+    },
+    "valid_call_rate": {
+      "mean": 0.9977004912075128,
+      "std": 0.0008440007490060562
+    },
+    "no_answer_rate": {
+      "mean": 0.7073333333333333,
+      "std": 0.0990420785996201
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 1131908.6666666667,
+      "std": 239017.23224975503
+    },
+    "completion_tokens": {
+      "mean": 49079.666666666664,
+      "std": 7848.568043492604
+    },
+    "em_count_per_seed": [
+      "29/500",
+      "31/500",
+      "24/500"
+    ]
+  }
+}

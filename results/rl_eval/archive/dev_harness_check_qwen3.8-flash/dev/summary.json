@@ -1,0 +1,107 @@
+{
+  "config": {
+    "data": "data/rl",
+    "split": "dev",
+    "limit": "10",
+    "model": "qwen3.8-flash",
+    "base_url": "None",
+    "seeds": "[0]",
+    "temperature": "0.7",
+    "max_tokens": "512",
+    "concurrency": "4",
+    "reward": "full",
+    "closed_book": "False",
+    "dense": "hashing",
+    "enable_thinking": "false",
+    "tag": "dev_harness_check_qwen3.8-flash",
+    "out": "results/rl_eval",
+    "dense_encoder": "hashing-256"
+  },
+  "per_seed": [
+    {
+      "n": 10,
+      "em": 0.4,
+      "em_count": "4/10",
+      "f1": 0.475,
+      "reward": 0.20149599999999998,
+      "avg_tool_calls": 4.6,
+      "avg_obs_tokens": 773.5,
+      "avg_turns": 5.2,
+      "valid_call_rate": 1.0,
+      "no_answer_rate": 0.4,
+      "done_reasons": {
+        "max_turns": 4,
+        "answer": 6
+      },
+      "tool_usage": {
+        "bm25_search": 26,
+        "get_document": 14,
+        "dense_search": 6
+      },
+      "em_by_qtype": {
+        "bridge": {
+          "em": 0.5714285714285714,
+          "count": "4/7"
+        },
+        "comparison": {
+          "em": 0.0,
+          "count": "0/3"
+        }
+      },
+      "api_errors": 0,
+      "prompt_tokens": 70284,
+      "completion_tokens": 1869
+    }
+  ],
+  "aggregate": {
+    "seeds": 1,
+    "n": 10,
+    "em": {
+      "mean": 0.4,
+      "std": 0.0
+    },
+    "f1": {
+      "mean": 0.475,
+      "std": 0.0
+    },
+    "reward": {
+      "mean": 0.20149599999999998,
+      "std": 0.0
+    },
+    "avg_tool_calls": {
+      "mean": 4.6,
+      "std": 0.0
+    },
+    "avg_obs_tokens": {
+      "mean": 773.5,
+      "std": 0.0
+    },
+    "avg_turns": {
+      "mean": 5.2,
+      "std": 0.0
+    },
+    "valid_call_rate": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "no_answer_rate": {
+      "mean": 0.4,
+      "std": 0.0
+    },
+    "api_errors": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "prompt_tokens": {
+      "mean": 70284.0,
+      "std": 0.0
+    },
+    "completion_tokens": {
+      "mean": 1869.0,
+      "std": 0.0
+    },
+    "em_count_per_seed": [
+      "4/10"
+    ]
+  }
+}
